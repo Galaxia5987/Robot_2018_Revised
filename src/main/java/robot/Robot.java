@@ -7,16 +7,12 @@
 
 package robot;
 
-import com.kauailabs.navx.frc.AHRS;
-import edu.wpi.first.networktables.NetworkTable;
-import edu.wpi.first.networktables.NetworkTableEntry;
-import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj.*;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import robot.subsystems.DrivetrainSubsystem;
-import robot.subsystems.GripperSubsystem;
+import robot.subsystems.gripper.GripperSubsystem;
 
 
 /**
