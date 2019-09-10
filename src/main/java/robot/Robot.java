@@ -26,6 +26,7 @@ public class Robot extends TimedRobot {
     public static OI m_oi;
     public static DrivetrainSubsystem drivetrain = new DrivetrainSubsystem();
     public static GripperSubsystem gripperSubsystem = new GripperSubsystem();
+    public static int elevatorHeight;
 
     Command m_autonomousCommand;
     SendableChooser<Command> m_chooser = new SendableChooser<>();
