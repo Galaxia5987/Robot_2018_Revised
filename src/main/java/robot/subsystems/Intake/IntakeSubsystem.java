@@ -10,31 +10,31 @@ import robot.RobotMap;
  */
 public class IntakeSubsystem extends Subsystem {
 
-    Victor leftVictor = new Victor(RobotMap.INTAKE_MOTOR_LEFT);
-    Victor rightVictor = new Victor(RobotMap.INTAKE_MOTOR_RIGHT);
-    public DoubleSolenoid Solenoids = new DoubleSolenoid(RobotMap.INTAKE_SOLENOID1,RobotMap.INAKE_SOLENOID2);
-    IntakeSubsystem SLD = new IntakeSubsystem();
-    public IntakeSubsystem(){
+    private Victor leftVictor = new Victor(RobotMap.INTAKE_MOTOR_LEFT);
+    private Victor rightVictor = new Victor(RobotMap.INTAKE_MOTOR_RIGHT);
+    private DoubleSolenoid solenoid = new DoubleSolenoid(RobotMap.INTAKE_SOLENOID1,RobotMap.INAKE_SOLENOID2);
 
+    /**
+     *
+     */
+    public IntakeSubsystem(){
+        leftVictor.setInverted(RobotMap.INTAKE_LEFT_REVERSED);
     }
     public void armsUpwards(){
 
-        SLD.Solenoids.set(DoubleSolenoid.Value.kForward);
+        solenoid.set(DoubleSolenoid.Value.kForward);
     }
     public void armsDownwards(){
-        SLD.Solenoids.set(DoubleSolenoid.Value.kReverse);
-
-
+        solenoid.set(DoubleSolenoid.Value.kReverse);
     }
+
+    /**
+     * sets the speed of the wheels of the intake
+     * @param speed a number from -1 to 1
+     */
     public void setSpeed(double speed){
-        leftVictor.setSpeed(-speed);
+        leftVictor.setSpeed(speed);
         rightVictor.setSpeed(speed);
-    }
-    public double getLeftSpeed(){
-        return leftVictor.getSpeed();
-    }
-    public double getRightSpeed() {
-        return rightVictor.getSpeed();
     }
     @Override
     public void initDefaultCommand() {

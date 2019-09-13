@@ -7,8 +7,8 @@
 
 package robot;
 
-import robot.subsystems.Commands.armsUpwards;
-import robot.subsystems.Commands.armsDownwards;
+import robot.subsystems.Intake.armsUpwards;
+import robot.subsystems.Intake.armsDownwards;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.buttons.Button;
@@ -38,3 +38,4 @@ public class OI {
         left11.whenPressed(new armsUpwards());
 
     }
+}
