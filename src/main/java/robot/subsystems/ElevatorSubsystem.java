@@ -31,7 +31,9 @@ public class ElevatorSubsystem extends Subsystem {
      */
     public void setHeight(double height) {
         liftMaster.set(ControlMode.MotionMagic, height, DemandType.ArbitraryFeedForward, ElevatorConstants.FEED_FORWARD);
-
+        if (height < 0 && getHeight() < 0) {
+            liftMaster.set(ControlMode.PercentOutput, 0);
+        }
     }
 
     /**
@@ -46,4 +48,5 @@ public class ElevatorSubsystem extends Subsystem {
     protected void initDefaultCommand() {
 
     }
+
 }
