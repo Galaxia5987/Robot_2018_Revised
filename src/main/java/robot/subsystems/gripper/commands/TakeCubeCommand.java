@@ -16,7 +16,7 @@ public class TakeCubeCommand extends Command {
     protected void initialize() {
         timer.start();
         Robot.gripperSubsystem.setLeftSpeed(-1);
-        Robot.gripperSubsystem.setRightSpeed(-  1);
+        Robot.gripperSubsystem.setRightSpeed(-1);
     }
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
