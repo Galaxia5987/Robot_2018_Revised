@@ -4,9 +4,11 @@ import edu.wpi.first.wpilibj.command.Command;
 
 
 public class MoveElevator extends Command {
-
-
-    public MoveElevator(){
+    double targetHeight;
+    MoveElevator moveElevator = new MoveElevator(0.8);
+    public MoveElevator(double height) {
+        requires(Robot.elevatorsubsystem);
+        targetHeight = height;
     }
 
     @Override
