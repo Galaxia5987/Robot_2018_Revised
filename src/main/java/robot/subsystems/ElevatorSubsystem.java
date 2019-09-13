@@ -24,6 +24,10 @@ public class ElevatorSubsystem extends Subsystem {
     }
 
 
+    /**
+     * Set height of the eleavator
+     *
+     * @param height
      */
     public void setHeight(double height) {
         liftMaster.set(ControlMode.MotionMagic, height, DemandType.ArbitraryFeedForward, ElevatorConstants.FEED_FORWARD);
