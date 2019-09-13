@@ -5,17 +5,13 @@ import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import robot.RobotMap;
 
-/**
- * An example subsystem.  You can replace me with your own Subsystem.
- */
 public class GripperSubsystem extends Subsystem {
-    // Put methods for controlling this subsystem
-    // here. Call these from commands.
 
     private final double MIN_HEIGHT = 1;
     private Victor rightMotor = new Victor(RobotMap.RIGHT_MOTOR_PORT);
     private Victor leftMotor = new Victor(RobotMap.LEFT_MOTOR_PORT);
     private AnalogInput proximity = new AnalogInput(RobotMap.PROXIMITY_PORT);
+    private static final double minCubeDistance = 2;
 
     public GripperSubsystem() {
         rightMotor.setInverted(true);
@@ -42,8 +38,15 @@ public class GripperSubsystem extends Subsystem {
     /**
      * @return current distance from the cube
      */
-    public double getCubeDistance() {
+    private double getCubeDistance() {
         return proximity.getVoltage();
+    }
+
+    /**
+     * @return if the cube is inside the gripper
+     */
+    public boolean isCubeInside() {
+        return minCubeDistance < getCubeDistance();
     }
 
     /**
