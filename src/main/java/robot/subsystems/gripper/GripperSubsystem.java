@@ -1,5 +1,6 @@
 package robot.subsystems.gripper;
 
+import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import robot.RobotMap;
@@ -14,6 +15,7 @@ public class GripperSubsystem extends Subsystem {
     private final double MIN_HEIGHT = 1;
     private Victor rightMotor = new Victor(RobotMap.RIGHT_MOTOR_PORT);
     private Victor leftMotor = new Victor(RobotMap.LEFT_MOTOR_PORT);
+    private AnalogInput proximity = new AnalogInput(RobotMap.PROXIMITY_PORT);
 
     public GripperSubsystem() {
         rightMotor.setInverted(true);
@@ -35,6 +37,10 @@ public class GripperSubsystem extends Subsystem {
         if (rightMotor.getSpeed() < 0 || leftMotor.getSpeed() < 0)
             return currentHeight > MIN_HEIGHT;
         return false;
+    }
+
+    public double getCubeDistance() {
+        return proximity.getVoltage();
     }
 
     public void setRightSpeed(double speed) {
