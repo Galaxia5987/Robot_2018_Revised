@@ -29,8 +29,7 @@ public class OI {
     Button y = new JoystickButton(xbox, 4);
 
     public OI() {
-        b.whenPressed(new DriveCommand(0.4));
-        x.whenPressed(new DriveCommand(-0.4));
+
     }
 
 
