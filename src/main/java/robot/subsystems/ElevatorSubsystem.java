@@ -30,8 +30,8 @@ public class ElevatorSubsystem extends Subsystem {
     }
 
      */
-    public void setPosition(double position) {
-        liftMaster.set(ControlMode.MotionMagic, position, DemandType.ArbitraryFeedForward, ElevatorConstants.FEED_FORWARD);
+    public void setHeight(double height) {
+        liftMaster.set(ControlMode.MotionMagic, height, DemandType.ArbitraryFeedForward, ElevatorConstants.FEED_FORWARD);
 
     }
 
