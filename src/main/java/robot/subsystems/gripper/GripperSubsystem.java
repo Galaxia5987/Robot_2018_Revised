@@ -30,7 +30,7 @@ public class GripperSubsystem extends Subsystem {
     }
 
     /**
-     * @param currentHeight the
+     * @param currentHeight the current height of the elevator
      * @return if the elevator is in danger zone.
      */
     public boolean inDangerOn(double currentHeight) {
@@ -39,14 +39,23 @@ public class GripperSubsystem extends Subsystem {
         return false;
     }
 
+    /**
+     * @return current distance from the cube
+     */
     public double getCubeDistance() {
         return proximity.getVoltage();
     }
 
+    /**
+     * @param speed set speed for the right side of the gripper
+     */
     public void setRightSpeed(double speed) {
         rightMotor.setSpeed(speed);
     }
 
+    /**
+     * @param speed set speed for the left side of the gripper
+     */
     public void setLeftSpeed(double speed) {
         leftMotor.setSpeed(speed);
     }
