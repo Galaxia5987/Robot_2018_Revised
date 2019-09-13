@@ -1,31 +1,30 @@
 package robot.subsystems.gripper.commands;
 
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 import robot.Robot;
 
-public class SetGripperSpeedCommand extends Command {
+public class TakeCubeCommand extends Command {
+    private Timer timer = new Timer();
+    private final double timeout = 5;
 
-    private double speed;
-
-    public SetGripperSpeedCommand(double speed) {
+    public TakeCubeCommand() {
         requires(Robot.gripperSubsystem);
-        this.speed = speed;
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-       Robot.gripperSubsystem.setLeftSpeed(speed);
-       Robot.gripperSubsystem.setRightSpeed(speed);
+        timer.start();
+        Robot.gripperSubsystem.setLeftSpeed(-1);
+        Robot.gripperSubsystem.setRightSpeed(-  1);
     }
-
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return Robot.gripperSubsystem.inDangerOn(Robot.elevatorsubsystem.convertTicksToHeight());
+        return timer.get() >= timeout || Robot.gripperSubsystem.isCubeInside();
     }
 
     // Called once after isFinished returns true
@@ -35,7 +34,7 @@ public class SetGripperSpeedCommand extends Command {
     }
 
     // Called when another command which requires one or more of the same
-// subsystems is scheduled to run
+    // subsystems is scheduled to run
     protected void interrupted() {
         end();
     }

@@ -8,10 +8,10 @@ import robot.RobotMap;
 public class GripperSubsystem extends Subsystem {
 
     private final double MIN_HEIGHT = 1;
+    private final double minCubeDistance = 2;
     private Victor rightMotor = new Victor(RobotMap.RIGHT_MOTOR_PORT);
     private Victor leftMotor = new Victor(RobotMap.LEFT_MOTOR_PORT);
     private AnalogInput proximity = new AnalogInput(RobotMap.PROXIMITY_PORT);
-    private static final double minCubeDistance = 2;
 
     public GripperSubsystem() {
         rightMotor.setInverted(true);
