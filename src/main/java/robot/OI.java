@@ -7,6 +7,7 @@
 
 package robot;
 
+import robot.subsystems.Intake.IntakeIn;
 import robot.subsystems.Intake.armsUpwards;
 import robot.subsystems.Intake.armsDownwards;
 import edu.wpi.first.wpilibj.Joystick;
@@ -20,22 +21,25 @@ import robot.subsystems.Commands.DriveCommand;
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
-    private Joystick left = new Joystick(0);
-    private Joystick right = new Joystick(1);
-    Button left10 = new JoystickButton(left, 10);
-    Button left11 = new JoystickButton(left, 11);
+    private Joystick right = new Joystick(0);
+    private Joystick left = new Joystick(1);
+    Button left10 = new JoystickButton(right, 10);
+    Button left11 = new JoystickButton(right, 11);
 
     public XboxController xbox = new XboxController(2);
     Button a = new JoystickButton(xbox, 1);
     Button b = new JoystickButton(xbox, 2);
     Button x = new JoystickButton(xbox, 3);
     Button y = new JoystickButton(xbox, 4);
+    Button trigerLeft = new JoystickButton(left,6);
+    Button trigerRight = new JoystickButton(right,7);
 
     public OI() {
         b.whenPressed(new DriveCommand(0.4));
         x.whenPressed(new DriveCommand(-0.4));
         left10.whenPressed(new armsDownwards());
         left11.whenPressed(new armsUpwards());
+        a.whenPressed(new IntakeIn());
 
     }
 }

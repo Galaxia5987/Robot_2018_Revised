@@ -4,10 +4,10 @@ import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 import robot.Robot;
 
-public class Intake extends Command {
+public class IntakeIn extends Command {
     private Timer timer = new Timer();
 
-    public Intake() {
+    public IntakeIn() {
 
     }
 
