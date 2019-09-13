@@ -4,7 +4,6 @@ import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.DemandType;
 import com.ctre.phoenix.motorcontrol.FeedbackDevice;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
-
 import edu.wpi.first.wpilibj.command.Subsystem;
 import robot.RobotMap;
 
@@ -24,10 +23,6 @@ public class ElevatorSubsystem extends Subsystem {
 
     }
 
-    /*
-    public double getSpeed(){
-        return liftMaster.getSelectedSensorVelocity();
-    }
 
      */
     public void setHeight(double height) {
@@ -35,20 +30,13 @@ public class ElevatorSubsystem extends Subsystem {
 
     }
 
-    public void setHeight() {
-    }
-
-
-    public double convertTicksToHeight() {
+    /**
+     * @return desired height in meters
+     */
+    public double getHeight() {
         return liftMaster.getSelectedSensorPosition();
     }
 
-    /*
-    public void setSpeed(double position){
-        liftMaster.set(ControlMode.MotionMagic, position);
-    }
-
-     */
 
     @Override
     protected void initDefaultCommand() {
