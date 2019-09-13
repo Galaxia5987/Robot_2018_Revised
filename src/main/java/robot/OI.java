@@ -7,14 +7,12 @@
 
 package robot;
 
-import edu.wpi.first.wpilibj.GenericHID;
+import robot.subsystems.Commands.armsUpwards;
+import robot.subsystems.Commands.armsDownwards;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-import edu.wpi.first.wpilibj.buttons.POVButton;
-import edu.wpi.first.wpilibj.command.CommandGroup;
-import edu.wpi.first.wpilibj.command.WaitCommand;
 import robot.subsystems.Commands.DriveCommand;
 
 /**
@@ -22,16 +20,21 @@ import robot.subsystems.Commands.DriveCommand;
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
+    private Joystick left = new Joystick(0);
+    private Joystick right = new Joystick(1);
+    Button left10 = new JoystickButton(left, 10);
+    Button left11 = new JoystickButton(left, 11);
 
     public XboxController xbox = new XboxController(2);
-    Button b = new JoystickButton(xbox, 1);
+    Button a = new JoystickButton(xbox, 1);
+    Button b = new JoystickButton(xbox, 2);
     Button x = new JoystickButton(xbox, 3);
     Button y = new JoystickButton(xbox, 4);
 
     public OI() {
         b.whenPressed(new DriveCommand(0.4));
         x.whenPressed(new DriveCommand(-0.4));
+        left10.whenPressed(new armsDownwards());
+        left11.whenPressed(new armsUpwards());
+
     }
-
-
-}
