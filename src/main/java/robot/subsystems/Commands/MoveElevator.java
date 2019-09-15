@@ -27,7 +27,7 @@ public class MoveElevator extends Command {
 
     @Override
     protected boolean isFinished() {
-        return Robot.elevatorsubsystem.getHeight() >= targetHeight - 0.05;
+        return Robot.elevatorsubsystem.getHeight() >= targetHeight - ElevatorConstants.HEIGHT_ERROR;
     }
 
     @Override
