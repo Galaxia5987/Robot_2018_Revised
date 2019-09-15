@@ -29,7 +29,7 @@ import robot.subsystems.ElevatorSubsystem;
 public class Robot extends TimedRobot {
     public static OI m_oi;
     public static DrivetrainSubsystem drivetrain = new DrivetrainSubsystem();
-    public static ElevatorSubsystem elevatorsubsystem = new ElevatorSubsystem();
+    public static ElevatorSubsystem elevatorSubsystem = new ElevatorSubsystem();
     Command m_autonomousCommand;
     SendableChooser<Command> m_chooser = new SendableChooser<>();
 
