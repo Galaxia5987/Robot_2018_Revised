@@ -6,8 +6,8 @@ import robot.subsystems.ElevatorConstants;
 
 
 public class MoveElevator extends Command {
-    double targetHeight;
-    MoveElevator moveElevator = new MoveElevator(0.8);
+    private double targetHeight;
+
     public MoveElevator(double height) {
         requires(Robot.elevatorSubsystem);
         targetHeight = height;
@@ -35,6 +35,6 @@ public class MoveElevator extends Command {
 
     @Override
     protected void end() {
-
+        Robot.elevatorSubsystem.setHeight(0);
     }
 }
