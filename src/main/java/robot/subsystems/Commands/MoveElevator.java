@@ -9,23 +9,23 @@ public class MoveElevator extends Command {
     private double targetHeight;
 
     public MoveElevator(double height) {
-        requires(Robot.elevatorSubsystem);
+        requires(Robot.elevator);
         targetHeight = height;
     }
 
     @Override
     protected void initialize() {
-        Robot.elevatorSubsystem.setHeight(targetHeight);
+        Robot.elevator.setHeight(targetHeight);
     }
 
     @Override
     protected void execute() {
-        Robot.elevatorSubsystem.setHeight(targetHeight);
+        Robot.elevator.setHeight(targetHeight);
     }
 
     @Override
     protected boolean isFinished() {
-        return Robot.elevatorSubsystem.getHeight() >= targetHeight - ElevatorConstants.HEIGHT_ERROR;
+        return Robot.elevator.getHeight() >= targetHeight - ElevatorConstants.HEIGHT_ERROR;
     }
 
     @Override
@@ -35,6 +35,6 @@ public class MoveElevator extends Command {
 
     @Override
     protected void end() {
-        Robot.elevatorSubsystem.setHeight(0);
+        Robot.elevator.setHeight(0);
     }
 }

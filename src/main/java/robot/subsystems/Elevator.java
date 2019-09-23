@@ -9,11 +9,11 @@ import robot.RobotMap;
 
 import static robot.subsystems.ElevatorConstants.*;
 
-public class ElevatorSubsystem extends Subsystem {
+public class Elevator extends Subsystem {
 
     private TalonSRX liftMaster = new TalonSRX(RobotMap.ELEVATOR_MOTOR);
 
-    public ElevatorSubsystem() {
+    public Elevator() {
 
         liftMaster.configMotionSCurveStrength(4);
         liftMaster.configSelectedFeedbackSensor(FeedbackDevice.CTRE_MagEncoder_Relative, 0, 0);
