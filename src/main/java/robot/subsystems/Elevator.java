@@ -37,7 +37,7 @@ public class Elevator extends Subsystem {
         liftMaster.set(ControlMode.MotionMagic, height, DemandType.ArbitraryFeedForward, FEED_FORWARD);
     }
     public void update(double height) {
-        if (height < HEIGHT_ERROR && getHeight() < HEIGHT_ERROR) {
+        if (height < ELEVATOR_DROP_HEIGHT && getHeight() < ELEVATOR_DROP_HEIGHT) {
             liftMaster.set(ControlMode.PercentOutput, 0);
         }
     }
