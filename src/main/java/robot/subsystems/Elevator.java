@@ -57,10 +57,10 @@ public class Elevator extends Subsystem {
 
     /**
      * Keep height of the elevator between minimum and maximum values
-     * @param minimum
-     * @param value
-     * @param maximum
-     * @return
+     * @param minimum set minimum height value
+     * @param value target height
+     * @param maximum set maximum height value
+     * @return value double in the range, if the value is less than the minimum or greater than the maximum it will cap it accordingly to the maximum or minimum value
      */
     private double constrain(double minimum, double value, double maximum){
         return Math.min(maximum, Math.max(minimum , value));
