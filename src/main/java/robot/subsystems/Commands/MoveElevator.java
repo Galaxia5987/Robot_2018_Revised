@@ -29,12 +29,8 @@ public class MoveElevator extends Command {
     }
 
     @Override
-    protected void interrupted() {
-        end();
-    }
+    protected void interrupted() {}
 
     @Override
-    protected void end() {
-        Robot.elevator.setHeight(targetHeight);
-    }
+    protected void end() {}
 }
