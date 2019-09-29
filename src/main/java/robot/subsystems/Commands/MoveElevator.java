@@ -20,7 +20,7 @@ public class MoveElevator extends Command {
 
     @Override
     protected void execute() {
-        Robot.elevator.setHeight(targetHeight);
+        Robot.elevator.update(targetHeight);
     }
 
     @Override
