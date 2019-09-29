@@ -33,7 +33,7 @@ public class Elevator extends Subsystem {
      * @param height
      */
     public void setHeight(double height) {
-        constrain(RobotMap.MAX_HEIGHT, height, RobotMap.MIN_HEIGHT);
+        constrain(ElevatorConstants.MAX_HEIGHT, height, ElevatorConstants.MIN_HEIGHT);
         liftMaster.set(ControlMode.MotionMagic, height, DemandType.ArbitraryFeedForward, FEED_FORWARD);
         if (height < HEIGHT_ERROR && getHeight() < HEIGHT_ERROR) {
             liftMaster.set(ControlMode.PercentOutput, 0);
