@@ -15,6 +15,8 @@ import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import robot.subsystems.Commands.DriveCommand;
 
+import static robot.subsystems.Intake.MoveArms.Direction;
+
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
@@ -36,8 +38,8 @@ public class OI {
     public OI() {
         b.whenPressed(new DriveCommand(0.4));
         x.whenPressed(new DriveCommand(-0.4));
-        left10.whenPressed(new MoveArms(false));
-        left11.whenPressed(new MoveArms(true));
+        left10.whenPressed(new MoveArms(Direction.UP));
+        left11.whenPressed(new MoveArms(Direction.DOWN));
         a.whenPressed(new IntakeIn());
 
     }

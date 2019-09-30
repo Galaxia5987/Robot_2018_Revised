@@ -4,7 +4,7 @@ import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import robot.RobotMap;
-
+import static robot.subsystems.Intake.MoveArms.Direction;
 /**
  * An example subsystem.  You can replace me with your own Subsystem.
  */
@@ -14,6 +14,7 @@ public class IntakeSubsystem extends Subsystem {
     private Victor rightVictor = new Victor(RobotMap.INTAKE_MOTOR_RIGHT);
     private DoubleSolenoid solenoid = new DoubleSolenoid(RobotMap.INTAKE_SOLENOID1,RobotMap.INTAKE_SOLENOID2);
 
+
     /**
      *
      */
@@ -21,8 +22,8 @@ public class IntakeSubsystem extends Subsystem {
         leftVictor.setInverted(RobotMap.INTAKE_LEFT_REVERSED);
     }
 
-    public void setArms(boolean direction){
-        if (direction == false){
+    public void setArms(MoveArms.Direction direction){
+        if (direction == Direction.UP){
             solenoid.set(DoubleSolenoid.Value.kForward);
         } else {
             solenoid.set(DoubleSolenoid.Value.kReverse);
