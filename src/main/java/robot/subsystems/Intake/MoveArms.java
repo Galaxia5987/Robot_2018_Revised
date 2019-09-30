@@ -1,24 +1,21 @@
 package robot.subsystems.Intake;
 
+
 import edu.wpi.first.wpilibj.command.Command;
-import edu.wpi.first.wpilibj.command.InstantCommand;
+import robot.RobotMap;
 
 import static robot.Robot.Intake;
 
-public class armsDownwards extends Command {
+public class MoveArms extends Command {
     @Override
     protected void initialize() {
-        Intake.armsDownwards();
+        Intake.setArms(IntakeSubsystem.INTAKE_SOLENOID_DIRECTION);
     }
 
     @Override
     protected void execute() {
     }
 
-    @Override
-    protected boolean isFinished() {
-        return true;
-    }
     @Override
     protected void end() {
     }
@@ -27,4 +24,8 @@ public class armsDownwards extends Command {
     protected void interrupted() {
     }
 
+    @Override
+    protected boolean isFinished() {
+        return true;
+    }
 }

@@ -8,8 +8,7 @@
 package robot;
 
 import robot.subsystems.Intake.IntakeIn;
-import robot.subsystems.Intake.armsUpwards;
-import robot.subsystems.Intake.armsDownwards;
+import robot.subsystems.Intake.MoveArms;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.buttons.Button;
@@ -38,7 +37,7 @@ public class OI {
         b.whenPressed(new DriveCommand(0.4));
         x.whenPressed(new DriveCommand(-0.4));
         left10.whenPressed(new armsDownwards());
-        left11.whenPressed(new armsUpwards());
+        left11.whenPressed(new MoveArms());
         a.whenPressed(new IntakeIn());
 
     }
