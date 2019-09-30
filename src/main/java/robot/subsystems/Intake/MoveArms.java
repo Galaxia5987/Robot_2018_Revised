@@ -3,7 +3,7 @@ package robot.subsystems.Intake;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-import static robot.Robot.Intake;
+import static robot.Robot.intake;
 
 public class MoveArms extends Command {
     public Direction INTAKE_SOLENOID_DIRECTION;
@@ -17,7 +17,7 @@ public class MoveArms extends Command {
 
     @Override
     protected void initialize() {
-        Intake.setArms(INTAKE_SOLENOID_DIRECTION);
+        intake.setArms(INTAKE_SOLENOID_DIRECTION);
     }
 
     @Override

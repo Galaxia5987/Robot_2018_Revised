@@ -32,8 +32,8 @@ public class OI {
     Button b = new JoystickButton(xbox, 2);
     Button x = new JoystickButton(xbox, 3);
     Button y = new JoystickButton(xbox, 4);
-    Button trigerLeft = new JoystickButton(left,6);
-    Button trigerRight = new JoystickButton(right,7);
+    Button triggerLeft = new JoystickButton(left,6);
+    Button triggerRight = new JoystickButton(right,7);
 
     public OI() {
         b.whenPressed(new DriveCommand(0.4));

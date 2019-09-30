@@ -20,7 +20,7 @@ public class IntakeIn extends Command {
 
     @Override
     protected void execute() {
-        Robot.Intake.setSpeed(-1);
+        Robot.intake.setSpeed(-1);
     }
 
     @Override
