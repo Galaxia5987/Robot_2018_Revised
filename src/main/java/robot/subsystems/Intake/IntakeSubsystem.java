@@ -22,7 +22,11 @@ public class IntakeSubsystem extends Subsystem {
         leftVictor.setInverted(RobotMap.INTAKE_LEFT_REVERSED);
     }
 
-    public void setArms(MoveArms.Direction direction){
+    /**
+     * sets the direction in which the arms move
+     * @param direction either UP or DOWN
+     */
+    public void setArms(Direction direction){
         if (direction == Direction.UP){
             solenoid.set(DoubleSolenoid.Value.kForward);
         } else {
