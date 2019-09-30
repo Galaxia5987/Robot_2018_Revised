@@ -7,9 +7,14 @@ import robot.RobotMap;
 import static robot.Robot.Intake;
 
 public class MoveArms extends Command {
+    public boolean INTAKE_SOLENOID_DIRECTION;
+    public MoveArms(boolean direction){
+        INTAKE_SOLENOID_DIRECTION = direction;
+    }
+
     @Override
     protected void initialize() {
-        Intake.setArms(IntakeSubsystem.INTAKE_SOLENOID_DIRECTION);
+        Intake.setArms(INTAKE_SOLENOID_DIRECTION);
     }
 
     @Override

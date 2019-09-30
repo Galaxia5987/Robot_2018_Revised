@@ -14,7 +14,7 @@ public class IntakeIn extends Command {
     @Override
     protected void initialize() {
         timer.reset();
-       timer.start();
+        timer.start();
 
     }
 

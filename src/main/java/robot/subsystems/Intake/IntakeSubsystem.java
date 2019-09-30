@@ -9,7 +9,7 @@ import robot.RobotMap;
  * An example subsystem.  You can replace me with your own Subsystem.
  */
 public class IntakeSubsystem extends Subsystem {
-    public static boolean INTAKE_SOLENOID_DIRECTION = false;
+
     private Victor leftVictor = new Victor(RobotMap.INTAKE_MOTOR_LEFT);
     private Victor rightVictor = new Victor(RobotMap.INTAKE_MOTOR_RIGHT);
     private DoubleSolenoid solenoid = new DoubleSolenoid(RobotMap.INTAKE_SOLENOID1,RobotMap.INTAKE_SOLENOID2);
@@ -17,13 +17,12 @@ public class IntakeSubsystem extends Subsystem {
     /**
      *
      */
-    public IntakeSubsystem(boolean direction) {
-        INTAKE_SOLENOID_DIRECTION = direction;
+    public IntakeSubsystem() {
         leftVictor.setInverted(RobotMap.INTAKE_LEFT_REVERSED);
     }
 
     public void setArms(boolean direction){
-        if (INTAKE_SOLENOID_DIRECTION == false){
+        if (direction == false){
             solenoid.set(DoubleSolenoid.Value.kForward);
         } else {
             solenoid.set(DoubleSolenoid.Value.kReverse);

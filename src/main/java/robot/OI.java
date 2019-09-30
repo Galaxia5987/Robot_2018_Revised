@@ -36,8 +36,8 @@ public class OI {
     public OI() {
         b.whenPressed(new DriveCommand(0.4));
         x.whenPressed(new DriveCommand(-0.4));
-        left10.whenPressed(new armsDownwards());
-        left11.whenPressed(new MoveArms());
+        left10.whenPressed(new MoveArms(false));
+        left11.whenPressed(new MoveArms(true));
         a.whenPressed(new IntakeIn());
 
     }
