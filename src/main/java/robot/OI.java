@@ -25,7 +25,7 @@ public class OI {
     private Joystick right = new Joystick(0);
     private Joystick left = new Joystick(1);
     Button left10 = new JoystickButton(left, 10);
-    Button left11 = new JoystickButton(right, 11);
+    Button right11 = new JoystickButton(right, 11);
 
     public XboxController xbox = new XboxController(2);
     Button a = new JoystickButton(xbox, 1);
@@ -39,7 +39,7 @@ public class OI {
         b.whenPressed(new DriveCommand(0.4));
         x.whenPressed(new DriveCommand(-0.4));
         left10.whenPressed(new MoveArms(Direction.UP));
-        left11.whenPressed(new MoveArms(Direction.DOWN));
+        right11.whenPressed(new MoveArms(Direction.DOWN));
         a.whenPressed(new IntakeIn(-1, 6));
 
     }
