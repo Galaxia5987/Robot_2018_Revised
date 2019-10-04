@@ -24,8 +24,8 @@ import static robot.subsystems.Intake.MoveArms.Direction;
 public class OI {
     private Joystick right = new Joystick(0);
     private Joystick left = new Joystick(1);
-    Button left10 = new JoystickButton(left, 10);
-    Button right11 = new JoystickButton(right, 11);
+    private Button left10 = new JoystickButton(left, 10);
+    private Button right11 = new JoystickButton(right, 11);
 
     public XboxController xbox = new XboxController(2);
     Button a = new JoystickButton(xbox, 1);
