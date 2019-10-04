@@ -10,17 +10,17 @@ import static robot.subsystems.Intake.MoveArms.Direction;
  */
 public class IntakeSubsystem extends Subsystem {
 
-    private Victor leftMotor = new Victor(RobotMap.INTAKE_MOTOR_LEFT);
-    private Victor rightMotor = new Victor(RobotMap.INTAKE_MOTOR_RIGHT);
-    private DoubleSolenoid solenoid = new DoubleSolenoid(RobotMap.INTAKE_SOLENOID_FORWARD,RobotMap.INTAKE_SOLENOID_REVERSE);
+    private Victor leftMotor = new Victor(IntakePorts.INTAKE_MOTOR_LEFT);
+    private Victor rightMotor = new Victor(IntakePorts.INTAKE_MOTOR_RIGHT);
+    private DoubleSolenoid solenoid = new DoubleSolenoid(IntakeConstants.INTAKE_SOLENOID_FORWARD,IntakeConstants.INTAKE_SOLENOID_REVERSE);
 
 
     /**
      *
      */
     public IntakeSubsystem() {
-        leftMotor.setInverted(RobotMap.INTAKE_LEFT_REVERSED);
-        rightMotor.setInverted(RobotMap.INTAKE_LEFT_REVERSED);
+        leftMotor.setInverted(IntakeConstants.INTAKE_LEFT_REVERSED);
+        rightMotor.setInverted(IntakeConstants.INTAKE_LEFT_REVERSED);
     }
 
     /**
