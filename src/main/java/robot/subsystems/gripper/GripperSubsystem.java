@@ -27,7 +27,7 @@ public class GripperSubsystem extends Subsystem {
 
     /**
      * @param currentHeight the current height of the elevator
-     * @return if the elevator is in danger zone.
+     * @return whether the elevator is in danger zone.
      */
     public boolean inDangerOn(double currentHeight) {
         if (rightMotor.getSpeed() < 0 || leftMotor.getSpeed() < 0)
