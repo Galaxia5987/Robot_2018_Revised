@@ -6,9 +6,11 @@ import robot.Robot;
 
 public class IntakeIn extends Command {
     private Timer timer = new Timer();
-
-    public IntakeIn() {
-
+    double speed;
+    double time;
+    public IntakeIn(double speed, double time) {
+        this.speed = speed;
+        this.time = time;
     }
 
     @Override
@@ -20,15 +22,16 @@ public class IntakeIn extends Command {
 
     @Override
     protected void execute() {
-        Robot.intake.setSpeed(-1);
+        Robot.intake.setSpeed(speed);
     }
 
     @Override
     protected boolean isFinished() {
-        return timer.hasPeriodPassed(6);
+        return timer.get() > time;
     }
 
     @Override
     protected void end() {
+        Robot.intake.setSpeed(0);
     }
 }
