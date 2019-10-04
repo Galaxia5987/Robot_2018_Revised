@@ -8,7 +8,7 @@ import robot.RobotMap;
 public class GripperSubsystem extends Subsystem {
 
     private final double MIN_HEIGHT = 1;
-    private final double minCubeDistance = 2;
+    private final double MIN_CUBE_DISTANCE = 2;
     private Victor rightMotor = new Victor(RobotMap.RIGHT_MOTOR_PORT);
     private Victor leftMotor = new Victor(RobotMap.LEFT_MOTOR_PORT);
     private AnalogInput proximity = new AnalogInput(RobotMap.PROXIMITY_PORT);
@@ -46,20 +46,25 @@ public class GripperSubsystem extends Subsystem {
      * @return if the cube is inside the gripper
      */
     public boolean isCubeInside() {
-        return minCubeDistance < getCubeDistance();
+        return MIN_CUBE_DISTANCE < getCubeDistance();
     }
 
     /**
      * @param speed set speed for the right side of the gripper
      */
-    public void setRightSpeed(double speed) {
+    private void setRightSpeed(double speed) {
         rightMotor.setSpeed(speed);
     }
 
     /**
      * @param speed set speed for the left side of the gripper
      */
-    public void setLeftSpeed(double speed) {
+    private void setLeftSpeed(double speed) {
         leftMotor.setSpeed(speed);
+    }
+
+    public void setVelocities(double rightVelocity, double leftVelocity) {
+        setRightSpeed(rightVelocity);
+        setLeftSpeed(leftVelocity);
     }
 }

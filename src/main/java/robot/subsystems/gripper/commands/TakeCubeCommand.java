@@ -14,9 +14,9 @@ public class TakeCubeCommand extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
+        timer.reset();
         timer.start();
-        Robot.gripperSubsystem.setLeftSpeed(-1);
-        Robot.gripperSubsystem.setRightSpeed(-1);
+        Robot.gripperSubsystem.setVelocities(-1, -1);
     }
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
@@ -29,8 +29,7 @@ public class TakeCubeCommand extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
-        Robot.gripperSubsystem.setLeftSpeed(0);
-        Robot.gripperSubsystem.setRightSpeed(0);
+        Robot.gripperSubsystem.setVelocities(0, 0);
     }
 
     // Called when another command which requires one or more of the same

@@ -3,7 +3,7 @@ package robot.subsystems.gripper.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import robot.Robot;
 
-public class SetGripperSpeedCommand extends Command {
+    public class SetGripperSpeedCommand extends Command {
 
     private double speed;
 
@@ -14,13 +14,12 @@ public class SetGripperSpeedCommand extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-       Robot.gripperSubsystem.setLeftSpeed(speed);
-       Robot.gripperSubsystem.setRightSpeed(speed);
+        Robot.gripperSubsystem.setVelocities(speed, speed);
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-
+        Robot.gripperSubsystem.setVelocities(speed, speed);
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -30,8 +29,7 @@ public class SetGripperSpeedCommand extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
-        Robot.gripperSubsystem.setLeftSpeed(0);
-        Robot.gripperSubsystem.setRightSpeed(0);
+        Robot.gripperSubsystem.setVelocities(0, 0);
     }
 
     // Called when another command which requires one or more of the same
