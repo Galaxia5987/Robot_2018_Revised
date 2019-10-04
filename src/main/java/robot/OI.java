@@ -24,7 +24,6 @@ public class OI {
     Button y = new JoystickButton(xbox, 4);
 
     public OI() {
-
     }
 
 
