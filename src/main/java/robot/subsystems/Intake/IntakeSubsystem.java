@@ -3,7 +3,6 @@ package robot.subsystems.Intake;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
-import robot.RobotMap;
 import static robot.subsystems.Intake.MoveArms.Direction;
 /**
  * An example subsystem.  You can replace me with your own Subsystem.
