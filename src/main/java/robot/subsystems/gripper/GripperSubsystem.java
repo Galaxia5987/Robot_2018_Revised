@@ -43,7 +43,7 @@ public class GripperSubsystem extends Subsystem {
     }
 
     /**
-     * @return if the cube is inside the gripper
+     * @return whether there is a cube inside the gripper
      */
     public boolean isCubeInside() {
         return minCubeDistance < getCubeDistance();
