@@ -28,7 +28,7 @@ public class Elevator extends Subsystem {
 
 
     /**
-     * Set height of the elevator
+     * Set height of the elevator.
      *
      * @param height
      */
