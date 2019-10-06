@@ -3,7 +3,10 @@ package robot.subsystems.gripper.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import robot.Robot;
 
-    public class SetGripperSpeedCommand extends Command {
+/**
+ * ERRORNOUS DONT RUN!
+ */
+public class SetGripperSpeedCommand extends Command {
 
     private double speed;
 
@@ -24,7 +27,7 @@ import robot.Robot;
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return Robot.elevatorsubsystem.inDanger(Robot.elevatorsubsystem.convertTicksToHeight());
+        return true; //TODO: Add proper isFinished.
     }
 
     // Called once after isFinished returns true
