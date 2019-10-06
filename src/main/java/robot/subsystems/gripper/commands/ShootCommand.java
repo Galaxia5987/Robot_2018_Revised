@@ -6,7 +6,7 @@ import robot.Robot;
 public class ShootCommand extends InstantCommand {
 
     public ShootCommand() {
-        requires(Robot.gripperSubsystem);
+        requires(Robot.gripper);
     }
 
     // Called just before this Command runs the first time

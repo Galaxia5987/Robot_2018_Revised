@@ -11,18 +11,18 @@ public class SetGripperSpeedCommand extends Command {
     private double speed;
 
     public SetGripperSpeedCommand(double speed) {
-        requires(Robot.gripperSubsystem);
+        requires(Robot.gripper);
         this.speed = speed;
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-        Robot.gripperSubsystem.setVelocities(speed, speed);
+        Robot.gripper.setVelocities(speed, speed);
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        Robot.gripperSubsystem.setVelocities(speed, speed);
+        Robot.gripper.setVelocities(speed, speed);
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -32,7 +32,7 @@ public class SetGripperSpeedCommand extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
-        Robot.gripperSubsystem.setVelocities(0, 0);
+        Robot.gripper.setVelocities(0, 0);
     }
 
     // Called when another command which requires one or more of the same

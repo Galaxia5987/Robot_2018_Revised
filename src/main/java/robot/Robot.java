@@ -11,10 +11,10 @@ import edu.wpi.first.wpilibj.*;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
-import robot.subsystems.DrivetrainSubsystem;
-import robot.subsystems.Intake.IntakeSubsystem;
+import robot.subsystems.Drivetrain;
+import robot.subsystems.Intake.Intake;
 import robot.subsystems.Elevator;
-import robot.subsystems.gripper.GripperSubsystem;
+import robot.subsystems.gripper.Gripper;
 
 
 /**
@@ -26,10 +26,10 @@ import robot.subsystems.gripper.GripperSubsystem;
  */
 public class Robot extends TimedRobot {
     public static OI m_oi;
-    public static DrivetrainSubsystem drivetrain = new DrivetrainSubsystem();
-    public static GripperSubsystem gripperSubsystem = new GripperSubsystem();
+    public static Drivetrain drivetrain = new Drivetrain();
+    public static Gripper gripper = new Gripper();
 
-    public static IntakeSubsystem intake = new IntakeSubsystem();
+    public static Intake intake = new Intake();
     public static Elevator elevator = new Elevator();
     Command m_autonomousCommand;
     SendableChooser<Command> m_chooser = new SendableChooser<>();
