@@ -41,6 +41,5 @@ public class OI {
         left10.whenPressed(new MoveArms(Direction.UP));
         right11.whenPressed(new MoveArms(Direction.DOWN));
         a.whenPressed(new IntakeIn(-1, 6));
-
     }
 }
