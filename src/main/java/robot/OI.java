@@ -7,15 +7,15 @@
 
 package robot;
 
-import robot.subsystems.Intake.IntakeIn;
-import robot.subsystems.Intake.MoveArms;
+import robot.subsystems.Intake.commands.IntakeIn;
+import robot.subsystems.Intake.commands.MoveArms;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-import robot.subsystems.Commands.DriveCommand;
+import robot.subsystems.drivetrain.commands.DriveCommand;
 
-import static robot.subsystems.Intake.MoveArms.Direction;
+import static robot.subsystems.Intake.commands.MoveArms.Direction;
 
 /**
  * This class is the glue that binds the controls on the physical operator

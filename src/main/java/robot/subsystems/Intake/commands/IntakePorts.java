@@ -1,4 +1,4 @@
-package robot.subsystems.Intake;
+package robot.subsystems.Intake.commands;
 
 public class IntakePorts {
     public static final int INTAKE_MOTOR_LEFT = 2;
