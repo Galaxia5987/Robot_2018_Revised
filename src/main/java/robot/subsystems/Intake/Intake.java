@@ -3,7 +3,9 @@ package robot.subsystems.Intake;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
-import static robot.subsystems.Intake.MoveArms.Direction;
+import robot.subsystems.Intake.commands.IntakePorts;
+
+import static robot.subsystems.Intake.commands.MoveArms.Direction;
 /**
  * An example subsystem.  You can replace me with your own Subsystem.
  */

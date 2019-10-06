@@ -11,9 +11,9 @@ import edu.wpi.first.wpilibj.*;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
-import robot.subsystems.Drivetrain;
+import robot.subsystems.drivetrain.Drivetrain;
 import robot.subsystems.Intake.Intake;
-import robot.subsystems.Elevator;
+import robot.subsystems.elevator.Elevator;
 import robot.subsystems.gripper.Gripper;
 
 
