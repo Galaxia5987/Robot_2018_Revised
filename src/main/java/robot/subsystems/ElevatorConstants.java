@@ -10,4 +10,7 @@ public class ElevatorConstants {
     public static final double HEIGHT_THRESHOLD = 0.05;
     public static final double MAX_HEIGHT = 1.0;
     public static final double MIN_HEIGHT = 0.0;
+    public static final double KP = 0.2;
+    public static final double KI = 0.0;
+    public static final double KD = 0.0;
 }

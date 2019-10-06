@@ -19,9 +19,9 @@ public class Elevator extends Subsystem {
         liftMaster.configMotionSCurveStrength(4);
         liftMaster.configSelectedFeedbackSensor(FeedbackDevice.CTRE_MagEncoder_Relative, 0, 0);
         liftMaster.setSensorPhase(ENCODER_REVERSED);
-        liftMaster.config_kP(TALON_PID_SLOT, 0.2, TALON_TIMEOUT_MS);
-        liftMaster.config_kI(TALON_PID_SLOT, 0, TALON_TIMEOUT_MS);
-        liftMaster.config_kD(TALON_PID_SLOT, 0, TALON_TIMEOUT_MS);
+        liftMaster.config_kP(TALON_PID_SLOT, KP, TALON_TIMEOUT_MS);
+        liftMaster.config_kI(TALON_PID_SLOT, KI, TALON_TIMEOUT_MS);
+        liftMaster.config_kD(TALON_PID_SLOT, KD, TALON_TIMEOUT_MS);
         liftMaster.configSelectedFeedbackCoefficient(TICKS_PER_METER);
 
     }
