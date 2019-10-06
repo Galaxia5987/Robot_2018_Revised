@@ -15,7 +15,6 @@ public class Elevator extends Subsystem {
     private TalonSRX liftMaster = new TalonSRX(RobotMap.ELEVATOR_MOTOR);
 
     public Elevator() {
-
         liftMaster.configMotionSCurveStrength(4);
         liftMaster.configSelectedFeedbackSensor(FeedbackDevice.CTRE_MagEncoder_Relative, 0, 0);
         liftMaster.setSensorPhase(ENCODER_REVERSED);
@@ -23,7 +22,6 @@ public class Elevator extends Subsystem {
         liftMaster.config_kI(TALON_PID_SLOT, 0, TALON_TIMEOUT_MS);
         liftMaster.config_kD(TALON_PID_SLOT, 0, TALON_TIMEOUT_MS);
         liftMaster.configSelectedFeedbackCoefficient(TICKS_PER_METER);
-
     }
 
 
