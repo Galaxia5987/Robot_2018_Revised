@@ -1,6 +1,5 @@
 package robot.subsystems.gripper.commands;
 
-import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.InstantCommand;
 import robot.Robot;
 

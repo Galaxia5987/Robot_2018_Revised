@@ -7,7 +7,6 @@ import robot.RobotMap;
 
 public class GripperSubsystem extends Subsystem {
 
-    private final double MIN_HEIGHT = 1;
     private final double MIN_CUBE_DISTANCE = 2;
     private Victor rightMotor = new Victor(RobotMap.RIGHT_MOTOR_PORT);
     private Victor leftMotor = new Victor(RobotMap.LEFT_MOTOR_PORT);
@@ -25,15 +24,6 @@ public class GripperSubsystem extends Subsystem {
 
     }
 
-    /**
-     * @param currentHeight the current height of the elevator
-     * @return whether the elevator is in danger zone.
-     */
-    public boolean inDangerOn(double currentHeight) {
-        if (rightMotor.getSpeed() < 0 || leftMotor.getSpeed() < 0)
-            return currentHeight > MIN_HEIGHT;
-        return false;
-    }
 
     /**
      * @return current distance from the cube
