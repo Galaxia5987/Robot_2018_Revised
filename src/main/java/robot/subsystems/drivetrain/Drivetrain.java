@@ -16,12 +16,12 @@ public class Drivetrain extends Subsystem {
     public VictorSPX left2 = new VictorSPX(RobotMap.DRIVETRAIN_LEFT_SLAVE2_PORT);
 
     public Drivetrain(){
-        leftMaster.setInverted(DrivetrainConstants.IS_LEFT_INVERTED);
-        left1.setInverted(DrivetrainConstants.IS_LEFT_INVERTED);
-        left2.setInverted(DrivetrainConstants.IS_LEFT_INVERTED);
-        rightMaster.setInverted(DrivetrainConstants.IS_RIGHT_INVERTED);
-        right1.setInverted(DrivetrainConstants.IS_RIGHT_INVERTED);
-        right2.setInverted(DrivetrainConstants.IS_RIGHT_INVERTED);
+        leftMaster.setInverted(DrivetrainConstants.IS_LEFT_MASTER_INVERTED);
+        left1.setInverted(DrivetrainConstants.IS_LEFT_SLAVE1_INVERTED);
+        left2.setInverted(DrivetrainConstants.IS_LEFT_SLAVE2_INVERTED);
+        rightMaster.setInverted(DrivetrainConstants.IS_RIGHT_MASTER_INVERTED);
+        right1.setInverted(DrivetrainConstants.IS_RIGHT_SLAVE1_INVERTED);
+        right2.setInverted(DrivetrainConstants.IS_RIGHT_SLAVE2_INVERTED);
 
         right1.follow(rightMaster);
         right2.follow(rightMaster);

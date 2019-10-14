@@ -21,7 +21,7 @@ public class Intake extends Subsystem {
      */
     public Intake() {
         leftMotor.setInverted(IntakeConstants.LEFT_REVERSED);
-        rightMotor.setInverted(IntakeConstants.LEFT_REVERSED);
+        rightMotor.setInverted(IntakeConstants.RIGHT_REVERSED);
     }
 
     /**
