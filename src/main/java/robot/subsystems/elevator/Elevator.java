@@ -6,7 +6,6 @@ import com.ctre.phoenix.motorcontrol.FeedbackDevice;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import robot.RobotMap;
-import robot.subsystems.elevator.ElevatorConstants;
 
 
 import static robot.subsystems.elevator.ElevatorConstants.*;
@@ -36,7 +35,7 @@ public class Elevator extends Subsystem {
         liftMaster.set(ControlMode.MotionMagic, height, DemandType.ArbitraryFeedForward, FEED_FORWARD);
     }
     public void update(double height) {
-        if (height < ELEVATOR_DROP_HEIGHT && getHeight() < ELEVATOR_DROP_HEIGHT) {
+        if (height < DROP_HEIGHT && getHeight() < DROP_HEIGHT) {
             liftMaster.set(ControlMode.PercentOutput, 0);
         }
     }
