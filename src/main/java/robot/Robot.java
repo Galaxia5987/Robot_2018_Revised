@@ -7,12 +7,12 @@
 
 package robot;
 
-import edu.wpi.first.wpilibj.*;
+import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
-import robot.subsystems.drivetrain.Drivetrain;
 import robot.subsystems.Intake.Intake;
+import robot.subsystems.drivetrain.Drivetrain;
 import robot.subsystems.elevator.Elevator;
 import robot.subsystems.gripper.Gripper;
 

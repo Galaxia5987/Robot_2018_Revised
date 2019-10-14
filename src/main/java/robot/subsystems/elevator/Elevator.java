@@ -7,7 +7,6 @@ import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import robot.RobotMap;
 
-
 import static robot.subsystems.elevator.ElevatorConstants.*;
 
 public class Elevator extends Subsystem {
@@ -24,16 +23,6 @@ public class Elevator extends Subsystem {
         liftMaster.configSelectedFeedbackCoefficient(TICKS_PER_METER);
     }
 
-
-    /**
-     * Set height of the elevator.
-     *
-     * @param height
-     */
-    public void setHeight(double height) {
-        height = constrain(ElevatorConstants.MAX_HEIGHT, height, ElevatorConstants.MIN_HEIGHT);
-        liftMaster.set(ControlMode.MotionMagic, height, DemandType.ArbitraryFeedForward, FEED_FORWARD);
-    }
     public void update(double height) {
         if (height < DROP_HEIGHT && getHeight() < DROP_HEIGHT) {
             liftMaster.set(ControlMode.PercentOutput, 0);
@@ -47,6 +36,15 @@ public class Elevator extends Subsystem {
         return liftMaster.getSelectedSensorPosition();
     }
 
+    /**
+     * Set height of the elevator.
+     *
+     * @param height
+     */
+    public void setHeight(double height) {
+        height = constrain(ElevatorConstants.MAX_HEIGHT, height, ElevatorConstants.MIN_HEIGHT);
+        liftMaster.set(ControlMode.MotionMagic, height, DemandType.ArbitraryFeedForward, FEED_FORWARD);
+    }
 
     @Override
     protected void initDefaultCommand() {
@@ -55,13 +53,14 @@ public class Elevator extends Subsystem {
 
     /**
      * Keep height of the elevator between minimum and maximum values
+     *
      * @param minimum set minimum height value
-     * @param value target height
+     * @param value   target height
      * @param maximum set maximum height value
      * @return value double in the range, if the value is less than the minimum or greater than the maximum it will cap it accordingly to the maximum or minimum value
      */
     private double constrain(double minimum, double value, double maximum) {
-        return Math.min(maximum, Math.max(minimum , value));
+        return Math.min(maximum, Math.max(minimum, value));
     }
 
 }

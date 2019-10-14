@@ -15,7 +15,7 @@ public class Drivetrain extends Subsystem {
     public VictorSPX right2 = new VictorSPX(RobotMap.DRIVETRAIN_RIGHT_SLAVE2_PORT);
     public VictorSPX left2 = new VictorSPX(RobotMap.DRIVETRAIN_LEFT_SLAVE2_PORT);
 
-    public Drivetrain(){
+    public Drivetrain() {
         leftMaster.setInverted(DrivetrainConstants.IS_LEFT_MASTER_INVERTED);
         left1.setInverted(DrivetrainConstants.IS_LEFT_SLAVE1_INVERTED);
         left2.setInverted(DrivetrainConstants.IS_LEFT_SLAVE2_INVERTED);
@@ -29,19 +29,19 @@ public class Drivetrain extends Subsystem {
         left2.follow(leftMaster);
     }
 
-    public void setLeftSpeed(double speed){
-        leftMaster.set(ControlMode.PercentOutput,speed);
+    public void setLeftSpeed(double speed) {
+        leftMaster.set(ControlMode.PercentOutput, speed);
     }
 
-    public void setRightSpeed(double speed){
-        rightMaster.set(ControlMode.PercentOutput,speed);
+    public void setRightSpeed(double speed) {
+        rightMaster.set(ControlMode.PercentOutput, speed);
     }
 
-    public double getLeftDistance(){
+    public double getLeftDistance() {
         return convertTicksToDistance(leftMaster.getSelectedSensorPosition());
     }
 
-    public double getRightDistance(){
+    public double getRightDistance() {
         return convertTicksToDistance(rightMaster.getSelectedSensorPosition());
     }
 

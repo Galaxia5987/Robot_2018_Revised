@@ -5,8 +5,8 @@ import edu.wpi.first.wpilibj.command.Command;
 import robot.Robot;
 
 public class InsertCubeCommand extends Command {
-    private Timer timer = new Timer();
     private final double timeout = 5;
+    private Timer timer = new Timer();
 
     public InsertCubeCommand() {
         requires(Robot.gripper);
@@ -18,6 +18,7 @@ public class InsertCubeCommand extends Command {
         timer.start();
         Robot.gripper.setVelocities(-1, -1);
     }
+
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
         Robot.gripper.setVelocities(-1, -1);
