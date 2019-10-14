@@ -3,7 +3,7 @@ package robot.subsystems.Intake;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
-import robot.subsystems.Intake.commands.IntakePorts;
+import robot.RobotMap;
 
 import static robot.subsystems.Intake.commands.MoveArms.Direction;
 /**
@@ -11,8 +11,8 @@ import static robot.subsystems.Intake.commands.MoveArms.Direction;
  */
 public class Intake extends Subsystem {
 
-    private Victor leftMotor = new Victor(IntakePorts.INTAKE_MOTOR_LEFT);
-    private Victor rightMotor = new Victor(IntakePorts.INTAKE_MOTOR_RIGHT);
+    private Victor leftMotor = new Victor(RobotMap.INTAKE_MOTOR_LEFT);
+    private Victor rightMotor = new Victor(RobotMap.INTAKE_MOTOR_RIGHT);
     private DoubleSolenoid solenoid = new DoubleSolenoid(IntakeConstants.INTAKE_SOLENOID_FORWARD,IntakeConstants.INTAKE_SOLENOID_REVERSE);
 
 

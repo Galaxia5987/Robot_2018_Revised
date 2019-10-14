@@ -13,4 +13,7 @@ public class RobotMap {
     public static final int DRIVETRAIN_LEFT_SLAVE1_PORT = 14;
     public static final int DRIVETRAIN_RIGHT_SLAVE2_PORT = 13;
     public static final int DRIVETRAIN_LEFT_SLAVE2_PORT = 15;
+    
+    public static final int INTAKE_MOTOR_LEFT = 2;
+    public static final int INTAKE_MOTOR_RIGHT = 5;
 }
