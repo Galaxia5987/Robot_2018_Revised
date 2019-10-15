@@ -12,8 +12,8 @@ public class Gripper extends Subsystem {
     private AnalogInput proximity = new AnalogInput(RobotMap.PROXIMITY_PORT);
 
     public Gripper() {
-        rightMotor.setInverted(true);
-        leftMotor.setInverted(false);
+        rightMotor.setInverted(GripperConstants.RIGHT_REVERSED);
+        leftMotor.setInverted(GripperConstants.LEFT_REVERSED);
     }
 
     @Override

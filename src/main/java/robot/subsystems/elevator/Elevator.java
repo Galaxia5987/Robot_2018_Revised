@@ -21,6 +21,7 @@ public class Elevator extends Subsystem {
         liftMaster.config_kI(TALON_PID_SLOT, KI, TALON_TIMEOUT_MS);
         liftMaster.config_kD(TALON_PID_SLOT, KD, TALON_TIMEOUT_MS);
         liftMaster.configSelectedFeedbackCoefficient(TICKS_PER_METER);
+        liftMaster.setInverted(TALON_REVERSED);
     }
 
     public void update(double height) {

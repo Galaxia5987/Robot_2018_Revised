@@ -13,5 +13,6 @@ public class ElevatorConstants {
     public static final double KP = 0.2;
     public static final double KI = 0.0;
     public static final double KD = 0.0;
+    public static final boolean TALON_REVERSED = false;
     public static int S_CURVE_STRENGTH = 4;
 }
