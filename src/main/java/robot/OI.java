@@ -11,11 +11,11 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-import robot.subsystems.Intake.commands.IntakeIn;
-import robot.subsystems.Intake.commands.MoveArms;
+import robot.subsystems.intake.commands.IntakeIn;
+import robot.subsystems.intake.commands.MoveArms;
 import robot.subsystems.drivetrain.commands.DriveCommand;
 
-import static robot.subsystems.Intake.commands.MoveArms.Direction;
+import static robot.subsystems.intake.commands.MoveArms.Direction;
 
 /**
  * This class is the glue that binds the controls on the physical operator

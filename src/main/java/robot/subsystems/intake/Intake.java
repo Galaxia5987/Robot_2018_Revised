@@ -1,11 +1,11 @@
-package robot.subsystems.Intake;
+package robot.subsystems.intake;
 
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import robot.RobotMap;
 
-import static robot.subsystems.Intake.commands.MoveArms.Direction;
+import static robot.subsystems.intake.commands.MoveArms.Direction;
 
 /**
  * An example subsystem.  You can replace me with your own Subsystem.

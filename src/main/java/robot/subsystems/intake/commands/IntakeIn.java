@@ -1,4 +1,4 @@
-package robot.subsystems.Intake.commands;
+package robot.subsystems.intake.commands;
 
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;

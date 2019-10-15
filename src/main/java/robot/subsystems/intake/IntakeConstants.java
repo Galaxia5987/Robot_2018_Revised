@@ -1,4 +1,4 @@
-package robot.subsystems.Intake;
+package robot.subsystems.intake;
 
 public class IntakeConstants {
     public static final int SOLENOID_FORWARD = 0;
