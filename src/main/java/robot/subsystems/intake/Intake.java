@@ -21,7 +21,7 @@ public class Intake extends Subsystem {
     }
 
     /**
-     * sets the direction in which the arms move
+     * Set the direction in which the arms move.
      *
      * @param direction either UP or DOWN
      */
@@ -34,7 +34,7 @@ public class Intake extends Subsystem {
     }
 
     /**
-     * sets the speed of the wheels of the intake
+     * Set the speed of the wheels of the intake.
      *
      * @param speed a number from -1 to 1
      */
