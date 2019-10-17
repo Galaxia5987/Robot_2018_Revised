@@ -4,6 +4,7 @@ import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
+import static robot.Constants.Gripper.*;
 import static robot.Ports.Gripper.*;
 
 public class Gripper extends Subsystem {
@@ -13,8 +14,8 @@ public class Gripper extends Subsystem {
     private AnalogInput proximity = new AnalogInput(PROXIMITY_PORT);
 
     public Gripper() {
-        rightMotor.setInverted(GripperConstants.RIGHT_REVERSED);
-        leftMotor.setInverted(GripperConstants.LEFT_REVERSED);
+        rightMotor.setInverted(RIGHT_REVERSED);
+        leftMotor.setInverted(LEFT_REVERSED);
     }
 
     @Override
@@ -36,7 +37,7 @@ public class Gripper extends Subsystem {
      * @return whether there is a cube inside the gripper
      */
     public boolean isCubeInside() {
-        return GripperConstants.MIN_CUBE_DISTANCE < getCubeDistance();
+        return MIN_CUBE_DISTANCE < getCubeDistance();
     }
 
     /**

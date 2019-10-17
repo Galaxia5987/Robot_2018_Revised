@@ -5,6 +5,7 @@ import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
+import static robot.Constants.Drivetrain.*;
 import static robot.Ports.Drivetrain.*;
 
 public class Drivetrain extends Subsystem {
@@ -16,12 +17,12 @@ public class Drivetrain extends Subsystem {
     public VictorSPX left2 = new VictorSPX(LEFT_SLAVE2_PORT);
 
     public Drivetrain() {
-        leftMaster.setInverted(DrivetrainConstants.LEFT_MASTER_REVERSED);
-        left1.setInverted(DrivetrainConstants.LEFT_SLAVE1_REVERSED);
-        left2.setInverted(DrivetrainConstants.LEFT_SLAVE2_REVERSED);
-        rightMaster.setInverted(DrivetrainConstants.RIGHT_MASTER_REVERSED);
-        right1.setInverted(DrivetrainConstants.RIGHT_SLAVE1_REVERSED);
-        right2.setInverted(DrivetrainConstants.RIGHT_SLAVE2_REVERSED);
+        leftMaster.setInverted(LEFT_MASTER_REVERSED);
+        left1.setInverted(LEFT_SLAVE1_REVERSED);
+        left2.setInverted(LEFT_SLAVE2_REVERSED);
+        rightMaster.setInverted(RIGHT_MASTER_REVERSED);
+        right1.setInverted(RIGHT_SLAVE1_REVERSED);
+        right2.setInverted(RIGHT_SLAVE2_REVERSED);
 
         right1.follow(rightMaster);
         right2.follow(rightMaster);
@@ -46,11 +47,11 @@ public class Drivetrain extends Subsystem {
     }
 
     public int convertDistanceToTicks(double distance) {
-        return (int) (distance * DrivetrainConstants.TICKS_PER_METER);
+        return (int) (distance * TICKS_PER_METER);
     }
 
     public double convertTicksToDistance(int tick) {
-        return tick / DrivetrainConstants.TICKS_PER_METER;
+        return tick / TICKS_PER_METER;
     }
 
     @Override

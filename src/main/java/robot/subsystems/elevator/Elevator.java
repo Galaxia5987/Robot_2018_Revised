@@ -6,8 +6,8 @@ import com.ctre.phoenix.motorcontrol.FeedbackDevice;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
-import static robot.Ports.Elevator.MOTOR;
-import static robot.subsystems.elevator.ElevatorConstants.*;
+import static robot.Ports.Elevator.*;
+import static robot.Constants.Elevator.*;
 
 public class Elevator extends Subsystem {
 
@@ -43,7 +43,7 @@ public class Elevator extends Subsystem {
      * @param height
      */
     public void setHeight(double height) {
-        height = constrain(ElevatorConstants.MAX_HEIGHT, height, ElevatorConstants.MIN_HEIGHT);
+        height = constrain(MAX_HEIGHT, height, MIN_HEIGHT);
         liftMaster.set(ControlMode.MotionMagic, height, DemandType.ArbitraryFeedForward, FEED_FORWARD);
     }
 
