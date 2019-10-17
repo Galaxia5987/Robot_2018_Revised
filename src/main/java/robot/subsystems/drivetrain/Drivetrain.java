@@ -29,10 +29,20 @@ public class Drivetrain extends Subsystem {
         left2.follow(leftMaster);
     }
 
+    /**
+     * Set the speed of leftMaster.
+     *
+     * @param speed
+     */
     public void setLeftSpeed(double speed) {
         leftMaster.set(ControlMode.PercentOutput, speed);
     }
 
+    /**
+     * Set the speed of rightMaster.
+     *
+     * @param speed
+     */
     public void setRightSpeed(double speed) {
         rightMaster.set(ControlMode.PercentOutput, speed);
     }
