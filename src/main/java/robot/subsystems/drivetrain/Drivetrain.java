@@ -48,27 +48,27 @@ public class Drivetrain extends Subsystem {
     }
 
     /**
-     * Get left distance.
+     * Get left position of the drivetrain.
      *
-     * @return left distance in meters.
+     * @return left position in meters.
      */
     public double getLeftDistance() {
         return convertTicksToDistance(leftMaster.getSelectedSensorPosition());
     }
 
     /**
-     * Get right distance.
+     * Get right position of the drivetrain.
      *
-     * @return right distance in meters
+     * @return right position in meters
      */
     public double getRightDistance() {
         return convertTicksToDistance(rightMaster.getSelectedSensorPosition());
     }
 
     /**
-     * Convert distance to ticks.
+     * Convert position to ticks.
      *
-     * @param distance
+     * @param distance in meters
      * @return amount of ticks
      */
     public int convertDistanceToTicks(double distance) {
@@ -76,10 +76,10 @@ public class Drivetrain extends Subsystem {
     }
 
     /**
-     * Convert ticks to distance.
+     * Convert ticks to position.
      *
      * @param tick
-     * @return distance in meters
+     * @return position in meters
      */
     public double convertTicksToDistance(int tick) {
         return tick / DrivetrainConstants.TICKS_PER_METER;
