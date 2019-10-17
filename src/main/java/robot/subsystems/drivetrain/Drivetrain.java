@@ -30,18 +30,18 @@ public class Drivetrain extends Subsystem {
     }
 
     /**
-     * Set the speed of leftMaster.
+     * Set the percent speed of the left side of the drivetrain.
      *
-     * @param speed
+     * @param speed a number from -1 to 1
      */
     public void setLeftSpeed(double speed) {
         leftMaster.set(ControlMode.PercentOutput, speed);
     }
 
     /**
-     * Set the speed of rightMaster.
+     * Set the percent speed of the right side of the drivetrain.
      *
-     * @param speed
+     * @param speed a number from -1 to 1
      */
     public void setRightSpeed(double speed) {
         rightMaster.set(ControlMode.PercentOutput, speed);
