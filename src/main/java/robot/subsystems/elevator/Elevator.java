@@ -25,7 +25,7 @@ public class Elevator extends Subsystem {
     }
 
     /**
-     * Set height of the elevator to 0 if the height is under 0.
+     * Set position of the elevator to 0 if the height is under 0.
      *
      * @param height
      */
@@ -43,7 +43,7 @@ public class Elevator extends Subsystem {
     }
 
     /**
-     * Set height of the elevator.
+     * Set position of the elevator.
      *
      * @param height
      */
