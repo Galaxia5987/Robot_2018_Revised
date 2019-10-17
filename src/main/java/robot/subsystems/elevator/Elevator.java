@@ -24,6 +24,11 @@ public class Elevator extends Subsystem {
         liftMaster.setInverted(TALON_REVERSED);
     }
 
+    /**
+     * Set height of the elevator to 0 if the height is under 0.
+     *
+     * @param height
+     */
     public void update(double height) {
         if (height < DROP_HEIGHT && getHeight() < DROP_HEIGHT) {
             liftMaster.set(ControlMode.PercentOutput, 0);
