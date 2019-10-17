@@ -5,13 +5,13 @@ import com.ctre.phoenix.motorcontrol.DemandType;
 import com.ctre.phoenix.motorcontrol.FeedbackDevice;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import edu.wpi.first.wpilibj.command.Subsystem;
-import robot.RobotMap;
 
+import static robot.Ports.Elevator.MOTOR;
 import static robot.subsystems.elevator.ElevatorConstants.*;
 
 public class Elevator extends Subsystem {
 
-    private TalonSRX liftMaster = new TalonSRX(RobotMap.ELEVATOR_MOTOR);
+    private TalonSRX liftMaster = new TalonSRX(MOTOR);
 
     public Elevator() {
         liftMaster.configMotionSCurveStrength(S_CURVE_STRENGTH);

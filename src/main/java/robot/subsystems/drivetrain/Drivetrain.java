@@ -4,16 +4,16 @@ import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 import edu.wpi.first.wpilibj.command.Subsystem;
-import robot.RobotMap;
+
+import static robot.Ports.Drivetrain.*;
 
 public class Drivetrain extends Subsystem {
-
-    public TalonSRX leftMaster = new TalonSRX(RobotMap.DRIVETRAIN_LEFT_MASTER_PORT);
-    public TalonSRX rightMaster = new TalonSRX(RobotMap.DRIVETRAIN_RIGHT_MASTER_PORT);
-    public VictorSPX right1 = new VictorSPX(RobotMap.DRIVETRAIN_RIGHT_SLAVE1_PORT);
-    public VictorSPX left1 = new VictorSPX(RobotMap.DRIVETRAIN_LEFT_SLAVE1_PORT);
-    public VictorSPX right2 = new VictorSPX(RobotMap.DRIVETRAIN_RIGHT_SLAVE2_PORT);
-    public VictorSPX left2 = new VictorSPX(RobotMap.DRIVETRAIN_LEFT_SLAVE2_PORT);
+    public TalonSRX leftMaster = new TalonSRX(LEFT_MASTER_PORT);
+    public TalonSRX rightMaster = new TalonSRX(RIGHT_MASTER_PORT);
+    public VictorSPX right1 = new VictorSPX(RIGHT_SLAVE1_PORT);
+    public VictorSPX left1 = new VictorSPX(LEFT_SLAVE1_PORT);
+    public VictorSPX right2 = new VictorSPX(RIGHT_SLAVE2_PORT);
+    public VictorSPX left2 = new VictorSPX(LEFT_SLAVE2_PORT);
 
     public Drivetrain() {
         leftMaster.setInverted(DrivetrainConstants.LEFT_MASTER_REVERSED);
