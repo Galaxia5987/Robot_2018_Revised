@@ -7,9 +7,7 @@ import robot.RobotMap;
 
 import static robot.subsystems.intake.commands.MoveArms.Direction;
 
-/**
- * An example subsystem.  You can replace me with your own Subsystem.
- */
+
 public class Intake extends Subsystem {
 
     private Victor leftMotor = new Victor(RobotMap.INTAKE_MOTOR_LEFT);
@@ -17,9 +15,6 @@ public class Intake extends Subsystem {
     private DoubleSolenoid solenoid = new DoubleSolenoid(IntakeConstants.SOLENOID_FORWARD, IntakeConstants.SOLENOID_REVERSE);
 
 
-    /**
-     *
-     */
     public Intake() {
         leftMotor.setInverted(IntakeConstants.LEFT_REVERSED);
         rightMotor.setInverted(IntakeConstants.RIGHT_REVERSED);
