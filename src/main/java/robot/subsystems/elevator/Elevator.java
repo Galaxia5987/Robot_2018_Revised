@@ -27,7 +27,7 @@ public class Elevator extends Subsystem {
     /**
      * Set position of the elevator to 0 if the height is under 0.
      *
-     * @param height
+     * @param height in meters
      */
     public void update(double height) {
         if (height < DROP_HEIGHT && getHeight() < DROP_HEIGHT) {
@@ -45,7 +45,7 @@ public class Elevator extends Subsystem {
     /**
      * Set position of the elevator.
      *
-     * @param height
+     * @param height in meters
      */
     public void setHeight(double height) {
         height = constrain(ElevatorConstants.MAX_HEIGHT, height, ElevatorConstants.MIN_HEIGHT);
