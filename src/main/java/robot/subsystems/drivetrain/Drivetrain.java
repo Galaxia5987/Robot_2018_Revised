@@ -48,7 +48,7 @@ public class Drivetrain extends Subsystem {
     }
 
     /**
-     * Convert ticks to distance
+     * Get left distance
      *
      * @return left distance in meters
      */
@@ -57,7 +57,7 @@ public class Drivetrain extends Subsystem {
     }
 
     /**
-     * Convert ticks to distance
+     * Get right distance
      *
      * @return right distance in meters
      */
