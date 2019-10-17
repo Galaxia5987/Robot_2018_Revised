@@ -53,8 +53,8 @@ public class Gripper extends Subsystem {
     }
 
     /**
-     * Set right and left velocities
-     * 
+     * Set right and left velocities.
+     *
      * @param rightVelocity
      * @param leftVelocity
      */
