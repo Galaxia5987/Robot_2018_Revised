@@ -64,7 +64,12 @@ public class Drivetrain extends Subsystem {
     public double getRightDistance() {
         return convertTicksToDistance(rightMaster.getSelectedSensorPosition());
     }
-    
+
+    /**
+     * Convert distance to ticks
+     * @param distance
+     * @return amount of ticks
+     */
     public int convertDistanceToTicks(double distance) {
         return (int) (distance * DrivetrainConstants.TICKS_PER_METER);
     }
