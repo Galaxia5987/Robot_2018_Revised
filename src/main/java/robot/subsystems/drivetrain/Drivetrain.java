@@ -66,7 +66,7 @@ public class Drivetrain extends Subsystem {
     }
 
     /**
-     * Convert position to ticks.
+     * Convert drivetrain position to ticks.
      *
      * @param distance in meters
      * @return amount of ticks
@@ -76,7 +76,7 @@ public class Drivetrain extends Subsystem {
     }
 
     /**
-     * Convert ticks to position.
+     * Convert drivetrain ticks to position.
      *
      * @param tick
      * @return position in meters
