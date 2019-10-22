@@ -5,16 +5,14 @@ import edu.wpi.first.wpilibj.command.Command;
 import robot.Robot;
 import robot.subsystems.gripper.Gripper;
 
-import static robot.Constants.Intake.INTAKING_SPEED;
+import static robot.Constants.Intake.*;
 
 public class IntakeIn extends Command {
-    private double time;
     private Timer timer = new Timer();
 
-    public IntakeIn(double time) {
+    public IntakeIn() {
         requires(Robot.gripper);
         requires(Robot.intake);
-        this.time = time;
     }
 
     @Override
