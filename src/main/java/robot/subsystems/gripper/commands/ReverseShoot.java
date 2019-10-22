@@ -2,8 +2,8 @@ package robot.subsystems.gripper.commands;
 
 import edu.wpi.first.wpilibj.command.InstantCommand;
 
-public class ReverseShootCommand extends InstantCommand {
-    public ReverseShootCommand() {
+public class ReverseShoot extends InstantCommand {
+    public ReverseShoot() {
 
     }
 

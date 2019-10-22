@@ -2,7 +2,8 @@ package robot.subsystems.elevator.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import robot.Robot;
-import robot.subsystems.elevator.ElevatorConstants;
+
+import static robot.Constants.Elevator.HEIGHT_THRESHOLD;
 
 
 public class MoveElevator extends Command {
@@ -25,7 +26,7 @@ public class MoveElevator extends Command {
 
     @Override
     protected boolean isFinished() {
-        return Math.abs(targetHeight - Robot.elevator.getHeight()) <= ElevatorConstants.HEIGHT_THRESHOLD;
+        return Math.abs(targetHeight - Robot.elevator.getHeight()) <= HEIGHT_THRESHOLD;
     }
 
     @Override
