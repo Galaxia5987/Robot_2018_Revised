@@ -40,5 +40,6 @@ public class Constants {
         public static final int SOLENOID_REVERSE = 1;
         public static final boolean LEFT_REVERSED = false;
         public static final boolean RIGHT_REVERSED = false;
+        public static final double INTAKING_SPEED = -0.5;
     }
 }

@@ -5,11 +5,10 @@ import edu.wpi.first.wpilibj.command.Command;
 import robot.Robot;
 
 public class IntakeIn extends Command {
-    private double speed;
     private double time;
     private Timer timer = new Timer();
 
-    public IntakeIn(double speed, double time) {
+    public IntakeIn(double time) {
         this.speed = speed;
         this.time = time;
     }
@@ -23,7 +22,7 @@ public class IntakeIn extends Command {
 
     @Override
     protected void execute() {
-        Robot.intake.setSpeed(speed);
+        Robot.intake.setSpeed(INTAKING_SPEED);
     }
 
     @Override
