@@ -25,7 +25,7 @@ public class IntakeIn extends Command {
 
     @Override
     protected void execute() {
-        if (Robot.elevator.getHeight() <= INTAKE_THRESHOLD) {
+        if (Robot.elevator.getHeight() <= INTAKE_THRESHOLD && !Robot.elevator.areArmsFolded()) {
             Robot.intake.setSpeed(INTAKING_SPEED);
             timer.start();
         }
