@@ -38,6 +38,7 @@ public class Constants {
          * for case that the intake is up
          */
         public static final double MIN_SHOOTING_HEIGHT  = 0.7; //TODO: Choose reasonable number
+        public static final double MIN_REVERSE_SHOOT_HEIGHT = 0.7;
     }
 
     public static class Intake {
