@@ -54,6 +54,12 @@ public class Gripper extends Subsystem {
         leftMotor.setSpeed(speed);
     }
 
+    /**
+     * Set right and left velocities.
+     *
+     * @param rightVelocity
+     * @param leftVelocity
+     */
     public void setVelocities(double rightVelocity, double leftVelocity) {
         setRightSpeed(rightVelocity);
         setLeftSpeed(leftVelocity);

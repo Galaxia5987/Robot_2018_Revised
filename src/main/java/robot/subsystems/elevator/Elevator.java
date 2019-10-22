@@ -24,6 +24,11 @@ public class Elevator extends Subsystem {
         liftMaster.setInverted(TALON_REVERSED);
     }
 
+    /**
+     * Set position of the elevator to 0 if the height is under 0.
+     *
+     * @param height in meters
+     */
     public void update(double height) {
         if (height < DROP_HEIGHT && getHeight() < DROP_HEIGHT) {
             liftMaster.set(ControlMode.PercentOutput, 0);
@@ -38,9 +43,9 @@ public class Elevator extends Subsystem {
     }
 
     /**
-     * Set height of the elevator.
+     * Set position of the elevator.
      *
-     * @param height
+     * @param height in meters
      */
     public void setHeight(double height) {
         height = constrain(MAX_HEIGHT, height, MIN_HEIGHT);
@@ -53,7 +58,7 @@ public class Elevator extends Subsystem {
     }
 
     /**
-     * Keep height of the elevator between minimum and maximum values
+     * Constrain a value within a range.
      *
      * @param minimum set minimum height value
      * @param value   target height

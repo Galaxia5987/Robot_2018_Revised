@@ -30,26 +30,58 @@ public class Drivetrain extends Subsystem {
         left2.follow(leftMaster);
     }
 
+    /**
+     * Set the percent speed of the left side of the drivetrain.
+     *
+     * @param speed a number from -1 to 1
+     */
     public void setLeftSpeed(double speed) {
         leftMaster.set(ControlMode.PercentOutput, speed);
     }
 
+    /**
+     * Set the percent speed of the right side of the drivetrain.
+     *
+     * @param speed a number from -1 to 1
+     */
     public void setRightSpeed(double speed) {
         rightMaster.set(ControlMode.PercentOutput, speed);
     }
 
+    /**
+     * Get left position of the drivetrain.
+     *
+     * @return left position in meters.
+     */
     public double getLeftDistance() {
         return convertTicksToDistance(leftMaster.getSelectedSensorPosition());
     }
 
+    /**
+     * Get right position of the drivetrain.
+     *
+     * @return right position in meters
+     */
     public double getRightDistance() {
         return convertTicksToDistance(rightMaster.getSelectedSensorPosition());
     }
 
+    /**
+     * Convert drivetrain position to ticks.
+     *
+     * @param distance in meters
+     * @return amount of ticks
+     */
     public int convertDistanceToTicks(double distance) {
         return (int) (distance * TICKS_PER_METER);
     }
 
+    /**
+     * Convert drivetrain ticks to position.
+     *
+     * @param tick
+     * @return position in meters
+     */
     public double convertTicksToDistance(int tick) {
         return tick / TICKS_PER_METER;
     }
