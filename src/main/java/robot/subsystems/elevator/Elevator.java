@@ -58,7 +58,7 @@ public class Elevator extends Subsystem {
     }
 
     /**
-     * Keep height of the elevator between minimum and maximum values.
+     * Constrain a value within a range.
      *
      * @param minimum set minimum height value
      * @param value   target height
