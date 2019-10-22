@@ -7,14 +7,13 @@ import robot.RobotMap;
 
 public class Gripper extends Subsystem {
 
-    private final double MIN_CUBE_DISTANCE = 2;
-    private Victor rightMotor = new Victor(RobotMap.RIGHT_MOTOR_PORT);
-    private Victor leftMotor = new Victor(RobotMap.LEFT_MOTOR_PORT);
+    private Victor rightMotor = new Victor(RobotMap.GRIPPER_RIGHT_MOTOR_PORT);
+    private Victor leftMotor = new Victor(RobotMap.GRIPPER_LEFT_MOTOR_PORT);
     private AnalogInput proximity = new AnalogInput(RobotMap.PROXIMITY_PORT);
 
     public Gripper() {
-        rightMotor.setInverted(true);
-        leftMotor.setInverted(false);
+        rightMotor.setInverted(GripperConstants.RIGHT_REVERSED);
+        leftMotor.setInverted(GripperConstants.LEFT_REVERSED);
     }
 
     @Override
@@ -36,7 +35,7 @@ public class Gripper extends Subsystem {
      * @return whether there is a cube inside the gripper
      */
     public boolean isCubeInside() {
-        return MIN_CUBE_DISTANCE < getCubeDistance();
+        return GripperConstants.MIN_CUBE_DISTANCE < getCubeDistance();
     }
 
     /**

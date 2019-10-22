@@ -29,8 +29,10 @@ public class MoveElevator extends Command {
     }
 
     @Override
-    protected void interrupted() {}
+    protected void interrupted() {
+    }
 
     @Override
-    protected void end() {}
+    protected void end() {
+    }
 }

@@ -8,20 +8,20 @@ import robot.RobotMap;
 
 public class Drivetrain extends Subsystem {
 
-    public TalonSRX leftMaster = new TalonSRX(RobotMap.LEFT_MASTER_PORT);
-    public TalonSRX rightMaster = new TalonSRX(RobotMap.RIGHT_MASTER_PORT);
-    public VictorSPX right1 = new VictorSPX(RobotMap.RIGHT1_PORT);
-    public VictorSPX left1 = new VictorSPX(RobotMap.LEFT1_PORT);
-    public VictorSPX right2 = new VictorSPX(RobotMap.RIGHT2_PORT);
-    public VictorSPX left2 = new VictorSPX(RobotMap.LEFT2_PORT);
+    public TalonSRX leftMaster = new TalonSRX(RobotMap.DRIVETRAIN_LEFT_MASTER_PORT);
+    public TalonSRX rightMaster = new TalonSRX(RobotMap.DRIVETRAIN_RIGHT_MASTER_PORT);
+    public VictorSPX right1 = new VictorSPX(RobotMap.DRIVETRAIN_RIGHT_SLAVE1_PORT);
+    public VictorSPX left1 = new VictorSPX(RobotMap.DRIVETRAIN_LEFT_SLAVE1_PORT);
+    public VictorSPX right2 = new VictorSPX(RobotMap.DRIVETRAIN_RIGHT_SLAVE2_PORT);
+    public VictorSPX left2 = new VictorSPX(RobotMap.DRIVETRAIN_LEFT_SLAVE2_PORT);
 
-    public Drivetrain(){
-        leftMaster.setInverted(DrivetrainConstants.IS_LEFT_INVERTED);
-        left1.setInverted(DrivetrainConstants.IS_LEFT_INVERTED);
-        left2.setInverted(DrivetrainConstants.IS_LEFT_INVERTED);
-        rightMaster.setInverted(DrivetrainConstants.IS_RIGHT_INVERTED);
-        right1.setInverted(DrivetrainConstants.IS_RIGHT_INVERTED);
-        right2.setInverted(DrivetrainConstants.IS_RIGHT_INVERTED);
+    public Drivetrain() {
+        leftMaster.setInverted(DrivetrainConstants.LEFT_MASTER_REVERSED);
+        left1.setInverted(DrivetrainConstants.LEFT_SLAVE1_REVERSED);
+        left2.setInverted(DrivetrainConstants.LEFT_SLAVE2_REVERSED);
+        rightMaster.setInverted(DrivetrainConstants.RIGHT_MASTER_REVERSED);
+        right1.setInverted(DrivetrainConstants.RIGHT_SLAVE1_REVERSED);
+        right2.setInverted(DrivetrainConstants.RIGHT_SLAVE2_REVERSED);
 
         right1.follow(rightMaster);
         right2.follow(rightMaster);
@@ -29,19 +29,19 @@ public class Drivetrain extends Subsystem {
         left2.follow(leftMaster);
     }
 
-    public void setLeftSpeed(double speed){
-        leftMaster.set(ControlMode.PercentOutput,speed);
+    public void setLeftSpeed(double speed) {
+        leftMaster.set(ControlMode.PercentOutput, speed);
     }
 
-    public void setRightSpeed(double speed){
-        rightMaster.set(ControlMode.PercentOutput,speed);
+    public void setRightSpeed(double speed) {
+        rightMaster.set(ControlMode.PercentOutput, speed);
     }
 
-    public double getLeftDistance(){
+    public double getLeftDistance() {
         return convertTicksToDistance(leftMaster.getSelectedSensorPosition());
     }
 
-    public double getRightDistance(){
+    public double getRightDistance() {
         return convertTicksToDistance(rightMaster.getSelectedSensorPosition());
     }
 
