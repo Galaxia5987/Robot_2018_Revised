@@ -2,9 +2,12 @@ package robot.subsystems.intake.commands;
 
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
+import robot.Constants;
 import robot.Robot;
+import robot.subsystems.elevator.Elevator;
 import robot.subsystems.gripper.Gripper;
 
+import static robot.Constants.Elevator.MIN_HEIGHT;
 import static robot.Constants.Intake.*;
 
 public class IntakeIn extends Command {
@@ -18,13 +21,14 @@ public class IntakeIn extends Command {
     @Override
     protected void initialize() {
         timer.reset();
-        timer.start();
-
     }
 
     @Override
     protected void execute() {
-        Robot.intake.setSpeed(INTAKING_SPEED);
+        if (Robot.elevator.getHeight() <= INTAKE_THRESHOLD) {
+            Robot.intake.setSpeed(INTAKING_SPEED);
+            timer.start();
+        }
     }
 
     @Override
