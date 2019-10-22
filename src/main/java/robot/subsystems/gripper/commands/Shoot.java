@@ -8,8 +8,7 @@ import static robot.Constants.Gripper.DEFAULT_SPEED;
 import static robot.Constants.Gripper.MIN_SHOOTING_HEIGHT;
 
 public class Shoot extends InstantCommand {
-
-    private Timer timer;
+    private Timer timer = new Timer();
 
     public Shoot() {
         requires(Robot.gripper);
@@ -44,8 +43,6 @@ public class Shoot extends InstantCommand {
 
     @Override
     protected boolean isFinished() {
-        if (Robot.gripper.getTimeout() == 0)
-            return true;
         return Robot.gripper.getTimeout() >= timer.get();
     }
 
