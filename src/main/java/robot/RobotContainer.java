@@ -23,6 +23,9 @@ import static robot.subsystems.intake.commands.MoveArms.Direction;
  * interface to the commands and command groups that allow control of the robot.
  */
 public class RobotContainer {
+    public XboxController xbox = new XboxController(2);
+    private Joystick left = new Joystick(1);
+    private Joystick right = new Joystick(0);
 
     public RobotContainer() {
     }
