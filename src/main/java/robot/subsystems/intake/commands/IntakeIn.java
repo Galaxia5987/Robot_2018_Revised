@@ -3,13 +3,17 @@ package robot.subsystems.intake.commands;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 import robot.Robot;
+import robot.subsystems.gripper.Gripper;
+
+import static robot.Constants.Intake.INTAKING_SPEED;
 
 public class IntakeIn extends Command {
     private double time;
     private Timer timer = new Timer();
 
     public IntakeIn(double time) {
-        this.speed = speed;
+        requires(Robot.gripper);
+        requires(Robot.intake);
         this.time = time;
     }
 
