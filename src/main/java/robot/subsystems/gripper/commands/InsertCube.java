@@ -7,6 +7,7 @@ import robot.Robot;
 import static robot.Constants.Gripper.DEFAULT_SPEED;
 
 public class InsertCube extends Command {
+    private final double timeout = 5;
     private Timer timer = new Timer();
 
     public InsertCube() {
@@ -30,7 +31,7 @@ public class InsertCube extends Command {
     // Make this return true when this Command no longer needs to run execute()
     @Override
     protected boolean isFinished() {
-        return timer.get() >= Robot.gripper.getTimeout() || Robot.gripper.isCubeInside();
+        return timer.get() >= timeout || Robot.gripper.isCubeInside();
     }
 
     // Called once after isFinished returns true
