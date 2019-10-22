@@ -5,13 +5,13 @@ import com.ctre.phoenix.motorcontrol.DemandType;
 import com.ctre.phoenix.motorcontrol.FeedbackDevice;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import edu.wpi.first.wpilibj.command.Subsystem;
-import robot.RobotMap;
 
-import static robot.subsystems.elevator.ElevatorConstants.*;
+import static robot.Ports.Elevator.*;
+import static robot.Constants.Elevator.*;
 
 public class Elevator extends Subsystem {
 
-    private TalonSRX liftMaster = new TalonSRX(RobotMap.ELEVATOR_MOTOR);
+    private TalonSRX liftMaster = new TalonSRX(MOTOR);
 
     public Elevator() {
         liftMaster.configMotionSCurveStrength(S_CURVE_STRENGTH);
@@ -48,7 +48,7 @@ public class Elevator extends Subsystem {
      * @param height in meters
      */
     public void setHeight(double height) {
-        height = constrain(ElevatorConstants.MAX_HEIGHT, height, ElevatorConstants.MIN_HEIGHT);
+        height = constrain(MAX_HEIGHT, height, MIN_HEIGHT);
         liftMaster.set(ControlMode.MotionMagic, height, DemandType.ArbitraryFeedForward, FEED_FORWARD);
     }
 

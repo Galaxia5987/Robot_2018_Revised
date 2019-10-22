@@ -10,11 +10,10 @@ package robot;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
-import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
-import robot.subsystems.intake.Intake;
 import robot.subsystems.drivetrain.Drivetrain;
 import robot.subsystems.elevator.Elevator;
 import robot.subsystems.gripper.Gripper;
+import robot.subsystems.intake.Intake;
 
 
 /**
@@ -25,14 +24,13 @@ import robot.subsystems.gripper.Gripper;
  * project.
  */
 public class Robot extends TimedRobot {
-    public static OI m_oi;
+    public static RobotContainer m_robotContainer;
     public static Drivetrain drivetrain = new Drivetrain();
     public static Gripper gripper = new Gripper();
 
     public static Intake intake = new Intake();
     public static Elevator elevator = new Elevator();
     Command m_autonomousCommand;
-    SendableChooser<Command> m_chooser = new SendableChooser<>();
 
     /**
      * This function is run when the robot is first started up and should be
@@ -40,7 +38,7 @@ public class Robot extends TimedRobot {
      */
     @Override
     public void robotInit() {
-        m_oi = new OI();
+        m_robotContainer = new RobotContainer();
     }
 
 
@@ -65,7 +63,6 @@ public class Robot extends TimedRobot {
      */
     @Override
     public void disabledInit() {
-
     }
 
     @Override
@@ -86,7 +83,7 @@ public class Robot extends TimedRobot {
      */
     @Override
     public void autonomousInit() {
-        m_autonomousCommand = m_chooser.getSelected();
+        m_autonomousCommand = m_robotContainer.getAutonomous();
         if (m_autonomousCommand != null) {
             m_autonomousCommand.start();
         }

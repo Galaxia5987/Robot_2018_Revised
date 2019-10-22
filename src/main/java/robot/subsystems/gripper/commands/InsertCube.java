@@ -4,11 +4,11 @@ import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 import robot.Robot;
 
-public class InsertCubeCommand extends Command {
+public class InsertCube extends Command {
     private final double timeout = 5;
     private Timer timer = new Timer();
 
-    public InsertCubeCommand() {
+    public InsertCube() {
         requires(Robot.gripper);
     }
 
