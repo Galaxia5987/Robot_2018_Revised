@@ -20,7 +20,7 @@ public class Gripper extends Subsystem {
         this.timeout = timeout;
         this.speed = speed;
     }
-
+    
     public Gripper(double speed) {
         this(speed, 0.0);
     }
@@ -69,13 +69,5 @@ public class Gripper extends Subsystem {
     public void setSpeed(double speed) {
         setRightSpeed(speed);
         setLeftSpeed(speed);
-    }
-
-    public double getSpeed() {
-        return speed;
-    }
-
-    public double getTimeout() {
-        return timeout;
     }
 }
