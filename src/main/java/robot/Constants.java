@@ -33,6 +33,11 @@ public class Constants {
         public static final boolean LEFT_REVERSED = false;
         public static final boolean RIGHT_REVERSED = false;
         public static final double MIN_CUBE_DISTANCE = 2;
+        public static final double DEFAULT_SPEED  = 0.7; //TODO: Choose reasonable number
+        /**
+         * for case that the intake is up
+         */
+        public static final double MIN_SHOOTING_HEIGHT  = 0.7; //TODO: Choose reasonable number
     }
 
     public static class Intake {
