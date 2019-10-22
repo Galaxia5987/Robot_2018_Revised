@@ -12,10 +12,17 @@ public class Gripper extends Subsystem {
     private Victor rightMotor = new Victor(RIGHT_MOTOR_PORT);
     private Victor leftMotor = new Victor(LEFT_MOTOR_PORT);
     private AnalogInput proximity = new AnalogInput(PROXIMITY_PORT);
+    private double speed, timeout;
 
-    public Gripper() {
+    public Gripper(double speed, double timeout) {
         rightMotor.setInverted(RIGHT_REVERSED);
         leftMotor.setInverted(LEFT_REVERSED);
+        this.timeout = timeout;
+        this.speed = speed;
+    }
+    
+    public Gripper(double speed) {
+        this(speed, 5.0);
     }
 
     @Override
