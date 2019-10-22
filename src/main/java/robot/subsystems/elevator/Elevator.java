@@ -12,7 +12,7 @@ import static robot.Constants.Elevator.*;
 public class Elevator extends Subsystem {
 
     private TalonSRX liftMaster = new TalonSRX(MOTOR);
-
+    private double targetHeight = 0;
     public Elevator() {
         liftMaster.configMotionSCurveStrength(S_CURVE_STRENGTH);
         liftMaster.configSelectedFeedbackSensor(FeedbackDevice.CTRE_MagEncoder_Relative, TALON_PID_SLOT, 0);
@@ -49,9 +49,17 @@ public class Elevator extends Subsystem {
      */
     public void setHeight(double height) {
         height = constrain(MAX_HEIGHT, height, MIN_HEIGHT);
+        targetHeight = height;
         liftMaster.set(ControlMode.MotionMagic, height, DemandType.ArbitraryFeedForward, FEED_FORWARD);
     }
 
+    /**
+     * return the target height the talon is trying to reach
+     * @return target height in meters
+     */
+    public double getTargetHeight(){
+        return targetHeight;
+    }
     @Override
     protected void initDefaultCommand() {
 

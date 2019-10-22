@@ -35,6 +35,13 @@ public class Intake extends Subsystem {
     }
 
     /**
+     * returns the state of the arms
+     * @return true if the arms are up/folded
+     */
+    public boolean areArmsFolded(){
+        return solenoid.get() == DoubleSolenoid.Value.kForward;
+    }
+    /**
      * Set the speed of the wheels of the intake.
      *
      * @param speed a number from -1 to 1
