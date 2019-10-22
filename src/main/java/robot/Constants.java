@@ -41,7 +41,7 @@ public class Constants {
         public static final boolean LEFT_REVERSED = false;
         public static final boolean RIGHT_REVERSED = false;
         public static final double INTAKING_SPEED = -0.5;
-        public static final double time = 6;
+        public static final double INTAKE_OPERATION_TIME = 6;
         public static double INTAKE_THRESHOLD = 0.05;
     }
 }

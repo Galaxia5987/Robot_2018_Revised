@@ -2,12 +2,8 @@ package robot.subsystems.intake.commands;
 
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
-import robot.Constants;
 import robot.Robot;
-import robot.subsystems.elevator.Elevator;
-import robot.subsystems.gripper.Gripper;
 
-import static robot.Constants.Elevator.MIN_HEIGHT;
 import static robot.Constants.Intake.*;
 
 public class IntakeIn extends Command {
@@ -33,11 +29,13 @@ public class IntakeIn extends Command {
 
     @Override
     protected boolean isFinished() {
-        return timer.get() > time;
+        return timer.get() > INTAKE_OPERATION_TIME;
     }
 
     @Override
     protected void end() {
+        timer.stop();
         Robot.intake.setSpeed(0);
     }
+
 }
