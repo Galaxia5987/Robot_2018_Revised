@@ -22,7 +22,7 @@ public class Gripper extends Subsystem {
     }
 
     public Gripper(double speed) {
-        this(speed, 5.0);
+        this(speed, 0.0);
     }
 
     @Override
