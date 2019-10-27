@@ -19,13 +19,13 @@ public class InsertCube extends Command {
     protected void initialize() {
         timer.reset();
         timer.start();
-        Robot.gripper.setVelocities(-DEFAULT_SPEED, -DEFAULT_SPEED);
+        Robot.gripper.setSpeed(-DEFAULT_SPEED);
     }
 
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-        Robot.gripper.setVelocities(-DEFAULT_SPEED, -DEFAULT_SPEED);
+        Robot.gripper.setSpeed(-DEFAULT_SPEED);
     }
 
     // Make this return true when this Command no longer needs to run execute()
