@@ -26,7 +26,7 @@ public class Shoot extends InstantCommand {
     protected void initialize() {
         timer.reset();
         timer.start();
-        if (Robot.elevator.getHeight() < MIN_SHOOTING_HEIGHT) {
+        if (Robot.elevator.getHeight() > MIN_SHOOTING_HEIGHT) {
             if (!Robot.intake.areArmsFolded()) {
                 Robot.gripper.setSpeed(speed);
                 Robot.intake.setSpeed(speed);
@@ -38,7 +38,7 @@ public class Shoot extends InstantCommand {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-        if (Robot.elevator.getHeight() < MIN_SHOOTING_HEIGHT) {
+        if (Robot.elevator.getHeight() > MIN_SHOOTING_HEIGHT) {
             if (!Robot.intake.areArmsFolded()) {
                 Robot.gripper.setSpeed(speed);
                 Robot.intake.setSpeed(speed);
