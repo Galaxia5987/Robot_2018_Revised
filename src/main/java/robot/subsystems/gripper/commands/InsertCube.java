@@ -36,7 +36,7 @@ public class InsertCube extends Command {
     // Called once after isFinished returns true
     @Override
     protected void end() {
-        Robot.gripper.setVelocities(0, 0);
+        Robot.gripper.setSpeed(0);
     }
 
 }

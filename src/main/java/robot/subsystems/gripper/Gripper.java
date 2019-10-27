@@ -62,14 +62,13 @@ public class Gripper extends Subsystem {
     }
 
     /**
-     * Set right and left velocities.
+     * Set right and left percent speeds of the wheels.
      *
-     * @param rightVelocity
-     * @param leftVelocity
+     * @param speed percent speed from -1 to 1.
      */
-    public void setVelocities(double rightVelocity, double leftVelocity) {
-        setRightSpeed(rightVelocity);
-        setLeftSpeed(leftVelocity);
+    public void setSpeed(double speed) {
+        setRightSpeed(speed);
+        setLeftSpeed(speed);
     }
 
     public double getSpeed() {
