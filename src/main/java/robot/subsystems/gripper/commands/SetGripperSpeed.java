@@ -17,12 +17,12 @@ public class SetGripperSpeed extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-        Robot.gripper.setVelocities(speed, speed);
+        Robot.gripper.setSpeed(speed);
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        Robot.gripper.setVelocities(speed, speed);
+        Robot.gripper.setSpeed(speed);
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -32,7 +32,7 @@ public class SetGripperSpeed extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
-        Robot.gripper.setVelocities(0, 0);
+        Robot.gripper.setSpeed(0);
     }
 
     // Called when another command which requires one or more of the same
