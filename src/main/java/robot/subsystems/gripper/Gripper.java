@@ -29,7 +29,7 @@ public class Gripper extends Subsystem {
     /**
      * @return current distance from the cube
      */
-    private double getCubeDistance() {
+    public double getCubeDistance() {
         return proximity.getVoltage();
     }
 
