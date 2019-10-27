@@ -12,7 +12,7 @@ public class ReverseShoot extends InstantCommand {
     private Timer timer = new Timer();
     private double timeout, speed;
 
-    public ReverseShoot(double speed ,double timeout) {
+    public ReverseShoot(double speed, double timeout) {
         requires(Robot.gripper);
         requires(Robot.intake);
         this.timeout = timeout;
@@ -27,14 +27,18 @@ public class ReverseShoot extends InstantCommand {
     protected void initialize() {
         timer.reset();
         timer.start();
-        Robot.gripper.setSpeed(speed);
-        Robot.intake.setSpeed(speed);
+        if (!isFinished()) {
+            Robot.gripper.setSpeed(speed);
+            Robot.intake.setSpeed(speed);
+        }
     }
 
     @Override
     protected void execute() {
-        Robot.gripper.setSpeed(speed);
-        Robot.intake.setSpeed(speed);
+        if (!isFinished()) {
+            Robot.gripper.setSpeed(speed);
+            Robot.intake.setSpeed(speed);
+        }
     }
 
     @Override
