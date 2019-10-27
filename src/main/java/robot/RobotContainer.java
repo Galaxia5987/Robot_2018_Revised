@@ -13,6 +13,7 @@ import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
+import robot.subsystems.elevator.commands.MoveElevator;
 import robot.subsystems.intake.commands.IntakeIn;
 import robot.subsystems.intake.commands.MoveArms;
 
@@ -26,11 +27,15 @@ public class RobotContainer {
     public XboxController xbox = new XboxController(2);
     private Joystick left = new Joystick(1);
     private Joystick right = new Joystick(0);
+    private Button a = new JoystickButton(left, 3);
+
 
     public RobotContainer() {
+        a.whenPressed(new MoveElevator(0.5));
+
     }
 
     public Command getAutonomous() {
-        return null;
+        return new MoveElevator(0.5);
     }
 }

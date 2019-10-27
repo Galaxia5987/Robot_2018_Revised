@@ -13,7 +13,7 @@ public class Ports {
     }
 
     public static class Elevator {
-        public static final int MOTOR = 14;
+        public static final int     MOTOR = 14;
     }
 
     public static class Drivetrain {
