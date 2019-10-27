@@ -4,7 +4,6 @@ import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.InstantCommand;
 import robot.Robot;
 
-import static robot.Constants.Gripper.DEFAULT_SPEED;
 import static robot.Constants.Gripper.MIN_REVERSE_SHOOT_HEIGHT;
 
 public class ReverseShoot extends InstantCommand {
@@ -14,7 +13,6 @@ public class ReverseShoot extends InstantCommand {
 
     public ReverseShoot(double speed, double timeout) {
         requires(Robot.gripper);
-        requires(Robot.intake);
         this.timeout = timeout;
         this.speed = speed;
     }
@@ -27,18 +25,15 @@ public class ReverseShoot extends InstantCommand {
     protected void initialize() {
         timer.reset();
         timer.start();
-        if (!isFinished()) {
+        if (!isFinished())
             Robot.gripper.setSpeed(speed);
-            Robot.intake.setSpeed(speed);
-        }
     }
+
 
     @Override
     protected void execute() {
-        if (!isFinished()) {
+        if (!isFinished())
             Robot.gripper.setSpeed(speed);
-            Robot.intake.setSpeed(speed);
-        }
     }
 
     @Override
