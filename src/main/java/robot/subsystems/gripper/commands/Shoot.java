@@ -5,6 +5,7 @@ import edu.wpi.first.wpilibj.command.InstantCommand;
 import robot.Robot;
 
 import static robot.Constants.Gripper.MIN_SHOOTING_HEIGHT;
+import static robot.Robot.intake;
 
 public class Shoot extends InstantCommand {
     private Timer timer = new Timer();
@@ -12,7 +13,7 @@ public class Shoot extends InstantCommand {
 
     public Shoot(double speed, double timeout) {
         requires(Robot.gripper);
-        requires(Robot.intake);
+        requires(intake);
         this.speed = speed;
         this.timeout = timeout;
     }
@@ -27,9 +28,9 @@ public class Shoot extends InstantCommand {
         timer.reset();
         timer.start();
         if (Robot.elevator.getHeight() > MIN_SHOOTING_HEIGHT) {
-            if (!Robot.intake.areArmsFolded()) {
+            if (!intake.areArmsFolded()) {
                 Robot.gripper.setSpeed(speed);
-                Robot.intake.setSpeed(speed);
+                intake.setSpeed(speed);
             }
         } else
             Robot.gripper.setSpeed(speed);
@@ -39,9 +40,9 @@ public class Shoot extends InstantCommand {
     @Override
     protected void execute() {
         if (Robot.elevator.getHeight() > MIN_SHOOTING_HEIGHT) {
-            if (!Robot.intake.areArmsFolded()) {
+            if (!intake.areArmsFolded()) {
                 Robot.gripper.setSpeed(speed);
-                Robot.intake.setSpeed(speed);
+                intake.setSpeed(speed);
             }
         } else
             Robot.gripper.setSpeed(speed);
@@ -49,7 +50,7 @@ public class Shoot extends InstantCommand {
 
     @Override
     protected boolean isFinished() {
-        return timeout >= timer.get();
+        return timeout >= timer.get() || !intake.areArmsFolded();
     }
 
     // Called once after isFinished returns true
@@ -57,6 +58,6 @@ public class Shoot extends InstantCommand {
     protected void end() {
         timer.stop();
         Robot.gripper.setSpeed(0);
-        Robot.intake.setSpeed(0);
+        intake.setSpeed(0);
     }
 }
