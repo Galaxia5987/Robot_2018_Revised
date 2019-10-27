@@ -4,6 +4,7 @@ import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 import robot.Robot;
 
+import static robot.Constants.Gripper.*;
 import static robot.Constants.Intake.*;
 
 public class IntakeIn extends Command {
@@ -22,8 +23,9 @@ public class IntakeIn extends Command {
 
     @Override
     protected void execute() {
-        if (Robot.elevator.getHeight() <= INTAKE_THRESHOLD && !Robot.elevator.areArmsFolded()) {
+        if (Robot.elevator.getHeight() <= INTAKE_THRESHOLD && !Robot.elevator.areArmsFolded() && Robot.gripper.getCubeDistance() <= MIN_CUBE_DISTANCE) {
             Robot.intake.setSpeed(INTAKING_SPEED);
+            Robot.gripper.setSpeed(DEFAULT_SPEED);
         }
     }
 
