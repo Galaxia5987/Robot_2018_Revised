@@ -38,7 +38,7 @@ public class Constants {
          * for case that the intake is up
          */
         public static final double MIN_SHOOTING_HEIGHT  = 2000000.7; //TODO: Choose reasonable number
-        public static final double MIN_REVERSE_SHOOT_HEIGHT = 2000000.7; //TODO: Choose reasonable number
+        public static final double MIN_REVERSE_SHOOT_HEIGHT = 2.5; //Minimum height which wont hit the back of the elevator.
     }
 
     public static class Intake {
