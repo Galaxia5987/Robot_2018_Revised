@@ -23,15 +23,15 @@ public class IntakeIn extends Command {
 
     @Override
     protected void execute() {
-        if (Robot.elevator.getHeight() <= INTAKE_THRESHOLD && !Robot.elevator.areArmsFolded() && Robot.gripper.getCubeDistance() <= MIN_CUBE_DISTANCE) {
+        //if (Robot.elevator.getHeight() <= INTAKE_THRESHOLD && !Robot.elevator.areArmsFolded() && Robot.gripper.getCubeDistance() <= MIN_CUBE_DISTANCE) {
             Robot.intake.setSpeed(INTAKING_SPEED);
             Robot.gripper.setSpeed(DEFAULT_SPEED);
-        }
+        //}
     }
 
     @Override
     protected boolean isFinished() {
-        return timer.get() > INTAKE_OPERATION_TIME || (Robot.elevator.getHeight() <= INTAKE_THRESHOLD && !Robot.elevator.areArmsFolded());
+        return timer.get() > INTAKE_OPERATION_TIME || Robot.elevator.getHeight() >= INTAKE_THRESHOLD || Robot.elevator.areArmsFolded() || !(Robot.gripper.getCubeDistance() <= MIN_CUBE_DISTANCE);
     }
 
     @Override
