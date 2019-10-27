@@ -33,6 +33,11 @@ public class IntakeIn extends Command {
     }
 
     @Override
+    protected void interrupted(){
+        end();
+    }
+
+    @Override
     protected void end() {
         timer.stop();
         Robot.intake.setSpeed(0);
