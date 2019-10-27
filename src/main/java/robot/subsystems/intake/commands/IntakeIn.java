@@ -17,19 +17,19 @@ public class IntakeIn extends Command {
     @Override
     protected void initialize() {
         timer.reset();
+        timer.start();
     }
 
     @Override
     protected void execute() {
         if (Robot.elevator.getHeight() <= INTAKE_THRESHOLD && !Robot.elevator.areArmsFolded()) {
             Robot.intake.setSpeed(INTAKING_SPEED);
-            timer.start();
         }
     }
 
     @Override
     protected boolean isFinished() {
-        return timer.get() > INTAKE_OPERATION_TIME;
+        return timer.get() > INTAKE_OPERATION_TIME || (Robot.elevator.getHeight() <= INTAKE_THRESHOLD && !Robot.elevator.areArmsFolded());
     }
 
     @Override
