@@ -5,6 +5,7 @@ import com.ctre.phoenix.motorcontrol.DemandType;
 import com.ctre.phoenix.motorcontrol.FeedbackDevice;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import robot.Constants;
 
 import static robot.Ports.Elevator.*;
 import static robot.Constants.Elevator.*;
@@ -22,6 +23,8 @@ public class Elevator extends Subsystem {
         liftMaster.config_kD(TALON_PID_SLOT, KD, TALON_TIMEOUT_MS);
         liftMaster.configSelectedFeedbackCoefficient(TICKS_PER_METER);
         liftMaster.setInverted(TALON_REVERSED);
+        liftMaster.configMotionCruiseVelocity((int) (2*TICKS_PER_METER ));
+        liftMaster.configMotionAcceleration((int) (1*TICKS_PER_METER ));
     }
 
     /**
@@ -39,7 +42,7 @@ public class Elevator extends Subsystem {
      * @return desired height in meters
      */
     public double getHeight() {
-        return liftMaster.getSelectedSensorPosition();
+        return liftMaster.getSelectedSensorPosition()/ TICKS_PER_METER;
     }
 
     /**
