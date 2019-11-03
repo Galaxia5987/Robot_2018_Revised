@@ -18,7 +18,7 @@ public class Elevator extends Subsystem {
     private TalonSRX liftMaster = new TalonSRX(MOTOR);
     private double targetHeight = 0;
     private NetworkTable elevatorTable = NetworkTableInstance.getDefault().getTable("Elevator");
-    private NetworkTableEntry heightEntry = elevatorTable.getEntry("height-");
+    private NetworkTableEntry heightEntry = elevatorTable.getEntry("target-height");
     private NetworkTableEntry kpEntry = elevatorTable.getEntry("KP");
     private NetworkTableEntry kiEntry = elevatorTable.getEntry("KI");
     private NetworkTableEntry kdEntry = elevatorTable.getEntry("KD");
