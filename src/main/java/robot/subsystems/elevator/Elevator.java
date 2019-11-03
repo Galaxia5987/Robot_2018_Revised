@@ -29,8 +29,8 @@ public class Elevator extends Subsystem {
         liftMaster.config_kD(TALON_PID_SLOT, KD, TALON_TIMEOUT_MS);
         liftMaster.configSelectedFeedbackCoefficient(TICKS_PER_METER);
         liftMaster.setInverted(TALON_REVERSED);
-        liftMaster.configMotionCruiseVelocity((int) (2*TICKS_PER_METER ));
-        liftMaster.configMotionAcceleration((int) (1*TICKS_PER_METER ));
+        liftMaster.configMotionCruiseVelocity((int) (1 * TICKS_PER_METER));
+        liftMaster.configMotionAcceleration((int) (1 * TICKS_PER_METER));
         liftMaster.setNeutralMode(NeutralMode.Brake);
     }
 
@@ -49,10 +49,11 @@ public class Elevator extends Subsystem {
      * @return desired height in meters
      */
     public double getHeight() {
-        return liftMaster.getSelectedSensorPosition()/ TICKS_PER_METER;
+        return liftMaster.getSelectedSensorPosition() / TICKS_PER_METER;
     }
 
     /**
+     * \][
      * Set position of the elevator.
      *
      * @param height in meters
@@ -66,11 +67,13 @@ public class Elevator extends Subsystem {
 
     /**
      * return the target height the talon is trying to reach
+     *
      * @return target height in meters
      */
-    public double getTargetHeight(){
+    public double getTargetHeight() {
         return targetHeight;
     }
+
     @Override
     protected void initDefaultCommand() {
 
