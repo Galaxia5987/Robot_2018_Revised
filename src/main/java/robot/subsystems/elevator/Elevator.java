@@ -12,12 +12,13 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 
 import static robot.Constants.Elevator.*;
 import static robot.Ports.Elevator.MOTOR;
+import static robot.Robot.elevatorTable;
 
 public class Elevator extends Subsystem {
 
     private TalonSRX liftMaster = new TalonSRX(MOTOR);
     private double targetHeight = 0;
-    private NetworkTable elevatorTable = NetworkTableInstance.getDefault().getTable("Elevator");
+
     private NetworkTableEntry heightEntry = elevatorTable.getEntry("target-height");
     private NetworkTableEntry kpEntry = elevatorTable.getEntry("KP");
     private NetworkTableEntry kiEntry = elevatorTable.getEntry("KI");

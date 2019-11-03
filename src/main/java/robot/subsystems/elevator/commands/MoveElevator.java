@@ -1,17 +1,14 @@
 package robot.subsystems.elevator.commands;
 
-import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableEntry;
-import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj.command.Command;
 
 import static robot.Constants.Elevator.HEIGHT_THRESHOLD;
 import static robot.Robot.elevator;
-
+import static robot.Robot.elevatorTable;
 
 public class MoveElevator extends Command {
     private double targetHeight;
-    private NetworkTable elevatorTable = NetworkTableInstance.getDefault().getTable("Elevator");
     private NetworkTableEntry heightEntry = elevatorTable.getEntry("height");
     private NetworkTableEntry speedEntry = elevatorTable.getEntry("speed");
     private NetworkTableEntry errorEntry = elevatorTable.getEntry("error");
@@ -39,8 +36,7 @@ public class MoveElevator extends Command {
     }
 
     @Override
-    protected boolean isFinished()
-    {
+    protected boolean isFinished() {
         return Math.abs(targetHeight - elevator.getHeight()) <= HEIGHT_THRESHOLD;
     }
 

@@ -7,6 +7,8 @@
 
 package robot;
 
+import edu.wpi.first.networktables.NetworkTable;
+import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -30,6 +32,7 @@ public class Robot extends TimedRobot {
 
     public static Intake intake = new Intake();
     public static Elevator elevator = new Elevator();
+    public static NetworkTable elevatorTable = NetworkTableInstance.getDefault().getTable("Elevator");
     Command m_autonomousCommand;
 
     /**
