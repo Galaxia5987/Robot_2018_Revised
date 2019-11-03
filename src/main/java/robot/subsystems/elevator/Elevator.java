@@ -52,7 +52,7 @@ public class Elevator extends Subsystem {
      * @param height in meters
      */
     public void setHeight(double height) {
-        height = constrain(MAX_HEIGHT, height, MIN_HEIGHT);
+        height = constrain(MIN_HEIGHT, height, MAX_HEIGHT);
         targetHeight = height;
         liftMaster.set(ControlMode.MotionMagic, height, DemandType.ArbitraryFeedForward, FEED_FORWARD);
     }
