@@ -5,9 +5,7 @@ import com.ctre.phoenix.motorcontrol.DemandType;
 import com.ctre.phoenix.motorcontrol.FeedbackDevice;
 import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
-import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableEntry;
-import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 import static robot.Constants.Elevator.*;
@@ -36,6 +34,9 @@ public class Elevator extends Subsystem {
         liftMaster.configMotionCruiseVelocity((int) (1 * TICKS_PER_METER));
         liftMaster.configMotionAcceleration((int) (1 * TICKS_PER_METER));
         liftMaster.setNeutralMode(NeutralMode.Brake);
+        kpEntry.setDouble(KP);
+        kiEntry.setDouble(KI);
+        kdEntry.setDouble(KD);
     }
 
     /**

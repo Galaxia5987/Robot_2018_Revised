@@ -26,13 +26,13 @@ import robot.subsystems.intake.Intake;
  * project.
  */
 public class Robot extends TimedRobot {
+    public static NetworkTable elevatorTable = NetworkTableInstance.getDefault().getTable("Elevator");
     public static RobotContainer m_robotContainer;
     public static Drivetrain drivetrain = new Drivetrain();
     public static Gripper gripper = new Gripper();
 
     public static Intake intake = new Intake();
     public static Elevator elevator = new Elevator();
-    public static NetworkTable elevatorTable = NetworkTableInstance.getDefault().getTable("Elevator");
     Command m_autonomousCommand;
 
     /**
