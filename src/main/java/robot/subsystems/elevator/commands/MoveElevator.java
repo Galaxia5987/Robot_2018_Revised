@@ -47,10 +47,6 @@ public class MoveElevator extends Command {
     }
 
     @Override
-    protected void interrupted() {
-    }
-
-    @Override
     protected void end() {
         System.out.println("End");
     }
