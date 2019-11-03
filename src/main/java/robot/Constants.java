@@ -16,9 +16,9 @@ public class Constants {
         public static final int S_CURVE_STRENGTH = 4;
         public static final int TALON_TIMEOUT_MS = 20;
         public static final double TICKS_PER_METER = 16814;
-        public static final double KP = 0.1;
-        public static final double KI = 0.0;
-        public static final double KD = 0;
+        public static double KP = 0.1;
+        public static double KI = 0.0;
+        public static double KD = 0;
         public static final int TALON_PID_SLOT = 0;
         public static final double FEED_FORWARD = 0;
         public static final double MAX_HEIGHT = 2 ;

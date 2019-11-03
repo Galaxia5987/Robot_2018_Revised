@@ -23,18 +23,17 @@ public class MoveElevator extends Command {
 
     @Override
     protected void initialize() {
+        elevator.updateConstants();
+
         elevator.setHeight(targetHeight);
         errorEntry.setDouble(targetHeight - elevator.getHeight());
         speedEntry.setDouble(elevator.getSpeed());
         heightEntry.setDouble(elevator.getHeight());
-        System.out.println("begin");
     }
 
     @Override
     protected void execute() {
         //elevator.update(targetHeight);
-
-        //elevator.setHeight(targetHeight);
         errorEntry.setDouble(targetHeight - elevator.getHeight());
         speedEntry.setDouble(elevator.getSpeed());
         heightEntry.setDouble(elevator.getHeight());

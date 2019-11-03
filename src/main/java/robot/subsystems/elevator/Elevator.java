@@ -19,6 +19,9 @@ public class Elevator extends Subsystem {
     private double targetHeight = 0;
     private NetworkTable elevatorTable = NetworkTableInstance.getDefault().getTable("Elevator");
     private NetworkTableEntry heightEntry = elevatorTable.getEntry("height-");
+    private NetworkTableEntry kpEntry = elevatorTable.getEntry("KP");
+    private NetworkTableEntry kiEntry = elevatorTable.getEntry("KI");
+    private NetworkTableEntry kdEntry = elevatorTable.getEntry("KD");
 
     public Elevator() {
         liftMaster.configMotionSCurveStrength(S_CURVE_STRENGTH);
@@ -94,5 +97,16 @@ public class Elevator extends Subsystem {
     private double constrain(double minimum, double value, double maximum) {
         return Math.min(maximum, Math.max(minimum, value));
     }
+
+    public void updateConstants() {
+        KP = kpEntry.getDouble(KP);
+        KI = kiEntry.getDouble(KI);
+        KD = kdEntry.getDouble(KD);
+
+        liftMaster.config_kP(TALON_PID_SLOT, KP, TALON_TIMEOUT_MS);
+        liftMaster.config_kI(TALON_PID_SLOT, KI, TALON_TIMEOUT_MS);
+        liftMaster.config_kD(TALON_PID_SLOT, KD, TALON_TIMEOUT_MS);
+    }
+
 
 }
