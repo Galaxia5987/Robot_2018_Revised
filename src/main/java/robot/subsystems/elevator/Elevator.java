@@ -3,17 +3,23 @@ package robot.subsystems.elevator;
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.DemandType;
 import com.ctre.phoenix.motorcontrol.FeedbackDevice;
+import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
+import edu.wpi.first.networktables.NetworkTable;
+import edu.wpi.first.networktables.NetworkTableEntry;
+import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj.command.Subsystem;
-import robot.Constants;
 
-import static robot.Ports.Elevator.*;
 import static robot.Constants.Elevator.*;
+import static robot.Ports.Elevator.MOTOR;
 
 public class Elevator extends Subsystem {
 
     private TalonSRX liftMaster = new TalonSRX(MOTOR);
     private double targetHeight = 0;
+    private NetworkTable elevatorTable = NetworkTableInstance.getDefault().getTable("Elevator");
+    private NetworkTableEntry heightEntry = elevatorTable.getEntry("height-");
+
     public Elevator() {
         liftMaster.configMotionSCurveStrength(S_CURVE_STRENGTH);
         liftMaster.configSelectedFeedbackSensor(FeedbackDevice.CTRE_MagEncoder_Relative, TALON_PID_SLOT, 0);
@@ -54,7 +60,8 @@ public class Elevator extends Subsystem {
     public void setHeight(double height) {
         height = constrain(MIN_HEIGHT, height, MAX_HEIGHT);
         targetHeight = height;
-        liftMaster.set(ControlMode.MotionMagic, height, DemandType.ArbitraryFeedForward, FEED_FORWARD);
+        heightEntry.setDouble(height);
+        liftMaster.set(ControlMode.MotionMagic, height * TICKS_PER_METER, DemandType.ArbitraryFeedForward, FEED_FORWARD);
     }
 
     /**
