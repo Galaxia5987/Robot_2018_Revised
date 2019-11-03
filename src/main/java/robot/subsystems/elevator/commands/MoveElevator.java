@@ -33,7 +33,6 @@ public class MoveElevator extends Command {
 
     @Override
     protected void execute() {
-        //elevator.update(targetHeight);
         errorEntry.setDouble(targetHeight - elevator.getHeight());
         speedEntry.setDouble(elevator.getSpeed());
         heightEntry.setDouble(elevator.getHeight());
@@ -47,6 +46,6 @@ public class MoveElevator extends Command {
 
     @Override
     protected void end() {
-        System.out.println("End");
+
     }
 }
