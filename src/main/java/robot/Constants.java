@@ -26,7 +26,7 @@ public class Constants {
         public static final double DROP_HEIGHT = 0.05;
         public static final double HEIGHT_THRESHOLD = 0.05;
         public static final boolean TALON_REVERSED = true;
-        public static final boolean ENCODER_REVERSED = false;
+        public static final boolean ENCODER_REVERSED = true;
     }
 
     public static class Gripper {
