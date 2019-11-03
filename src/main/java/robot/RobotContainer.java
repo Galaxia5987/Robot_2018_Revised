@@ -36,6 +36,6 @@ public class RobotContainer {
     }
 
     public Command getAutonomous() {
-        return new MoveElevator(0.5);
+        return new MoveElevator(0.75);
     }
 }
