@@ -25,6 +25,7 @@ public class Elevator extends Subsystem {
         liftMaster.setInverted(TALON_REVERSED);
         liftMaster.configMotionCruiseVelocity((int) (2*TICKS_PER_METER ));
         liftMaster.configMotionAcceleration((int) (1*TICKS_PER_METER ));
+        liftMaster.setNeutralMode(NeutralMode.Brake);
     }
 
     /**
