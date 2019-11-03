@@ -69,6 +69,10 @@ public class Elevator extends Subsystem {
 
     }
 
+    public double getSpeed() {
+        return liftMaster.getSelectedSensorVelocity();
+    }
+
     /**
      * Constrain a value within a range.
      *
