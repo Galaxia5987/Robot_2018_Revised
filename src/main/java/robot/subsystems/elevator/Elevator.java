@@ -110,5 +110,13 @@ public class Elevator extends Subsystem {
         liftMaster.config_kD(TALON_PID_SLOT, KD, TALON_TIMEOUT_MS);
     }
 
+    /**
+     * Reset the target Height for cases like disabled or other issues.
+     */
+    public void resetTargetHeight(){
+        targetHeight = 0;
+
+    }
+
 
 }
