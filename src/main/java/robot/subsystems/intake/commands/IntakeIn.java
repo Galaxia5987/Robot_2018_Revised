@@ -33,7 +33,7 @@ public class IntakeIn extends Command {
 
     @Override
     protected boolean isFinished() {
-        return timer.get() > time;
+        return time > 0 && timer.get() > time;
     }
 
     @Override
