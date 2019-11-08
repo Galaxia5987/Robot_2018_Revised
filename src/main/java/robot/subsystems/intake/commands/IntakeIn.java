@@ -10,6 +10,7 @@ public class IntakeIn extends Command {
     private Timer timer = new Timer();
 
     public IntakeIn(double speed, double time) {
+        requires(Robot.intake);
         this.speed = speed;
         this.time = time;
     }
