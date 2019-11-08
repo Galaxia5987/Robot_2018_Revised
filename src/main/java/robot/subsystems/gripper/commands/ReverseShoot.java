@@ -32,13 +32,12 @@ public class ReverseShoot extends InstantCommand {
 
     @Override
     protected void execute() {
-        if (!isFinished())
-            Robot.gripper.setSpeed(speed);
+        Robot.gripper.setSpeed(speed);
     }
 
     @Override
     protected boolean isFinished() {
-        return timeout >= timer.get() || Robot.elevator.getHeight() < MIN_REVERSE_SHOOT_HEIGHT;
+        return timer.get() >= timeout; //|| Robot.elevator.getHeight() > MIN_REVERSE_SHOOT_HEIGHT;
     }
 
     @Override

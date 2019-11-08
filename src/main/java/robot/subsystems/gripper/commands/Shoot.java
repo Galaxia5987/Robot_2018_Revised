@@ -45,7 +45,7 @@ public class Shoot extends InstantCommand {
 
     @Override
     protected boolean isFinished() {
-        return timeout >= timer.get() || Robot.intake.areArmsFolded();
+        return  timer.get() >= timeout || Robot.intake.areArmsFolded();
     }
 
     // Called once after isFinished returns true
