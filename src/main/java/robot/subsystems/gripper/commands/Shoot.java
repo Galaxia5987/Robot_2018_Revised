@@ -27,30 +27,26 @@ public class Shoot extends InstantCommand {
     protected void initialize() {
         timer.reset();
         timer.start();
-        if (Robot.elevator.getHeight() > MIN_SHOOTING_HEIGHT) {
-            if (!intake.areArmsFolded()) {
-                Robot.gripper.setSpeed(speed);
-                intake.setSpeed(speed);
-            }
-        } else
-            Robot.gripper.setSpeed(speed);
+        applyPower();
     }
 
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-        if (Robot.elevator.getHeight() > MIN_SHOOTING_HEIGHT) {
-            if (!intake.areArmsFolded()) {
+        applyPower();
+    }
+
+    private void applyPower() {
+        if (Robot.elevator.getHeight() > MIN_SHOOTING_HEIGHT)
+            if (intake.areArmsFolded()) {
                 Robot.gripper.setSpeed(speed);
                 intake.setSpeed(speed);
             }
-        } else
-            Robot.gripper.setSpeed(speed);
     }
 
     @Override
     protected boolean isFinished() {
-        return timeout >= timer.get() || !intake.areArmsFolded();
+        return timeout >= timer.get() || intake.areArmsFolded();
     }
 
     // Called once after isFinished returns true
