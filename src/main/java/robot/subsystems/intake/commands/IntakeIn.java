@@ -15,6 +15,10 @@ public class IntakeIn extends Command {
         this.time = time;
     }
 
+    public IntakeIn(double speed) {
+        this(speed, 0);
+    }
+
     @Override
     protected void initialize() {
         timer.reset();
