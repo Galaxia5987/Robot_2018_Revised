@@ -23,12 +23,12 @@ public class IntakeIn extends Command {
     protected void initialize() {
         timer.reset();
         timer.start();
-
+        Robot.intake.setSpeed(speed);
     }
 
     @Override
     protected void execute() {
-        Robot.intake.setSpeed(speed);
+
     }
 
     @Override
