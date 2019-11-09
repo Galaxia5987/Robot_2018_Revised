@@ -26,26 +26,28 @@ public class Shoot extends InstantCommand {
     protected void initialize() {
         timer.reset();
         timer.start();
-        applyPower();
+        applyPowerOnWheels();
     }
 
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-        applyPower();
+        applyPowerOnWheels();
     }
 
-    private void applyPower() {
-        if (Robot.elevator.getHeight() > MIN_SHOOTING_HEIGHT)
-            if (Robot.intake.areArmsFolded()) {
+    private void applyPowerOnWheels() {
+        if (Robot.elevator.getHeight() < MIN_SHOOTING_HEIGHT) {
+            if (!Robot.intake.areArmsFolded()) {
                 Robot.gripper.setSpeed(speed);
                 Robot.intake.setSpeed(speed);
             }
+        }else
+            Robot.gripper.setSpeed(speed);
     }
 
     @Override
     protected boolean isFinished() {
-        return  timer.get() >= timeout || Robot.intake.areArmsFolded();
+        return timer.get() >= timeout || Robot.intake.areArmsFolded();
     }
 
     // Called once after isFinished returns true
