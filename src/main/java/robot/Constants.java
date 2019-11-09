@@ -16,6 +16,8 @@ public class Constants {
         public static final int S_CURVE_STRENGTH = 4;
         public static final int TALON_TIMEOUT_MS = 20;
         public static final double TICKS_PER_METER = 16814;
+        public static final double MIN_SHOOTING_HEIGHT  = 2.5; //If the height is under this constant, the cube might hit the wrists
+        public static final double MIN_REVERSE_SHOOT_HEIGHT = 2.5; //Minimum height which wont hit the back of the elevator.
         public static double KP = 0.5;
         public static double KI = 0.0;
         public static double KD = 0.12;
@@ -33,8 +35,6 @@ public class Constants {
         public static final boolean LEFT_REVERSED = false;
         public static final boolean RIGHT_REVERSED = false;
         public static final double MIN_CUBE_DISTANCE = 2;
-        public static final double MIN_SHOOTING_HEIGHT  = 2.5; //If the height is under this constant, the cube might hit the wrists
-        public static final double MIN_REVERSE_SHOOT_HEIGHT = 2.5; //Minimum height which wont hit the back of the elevator.
     }
 
     public static class Intake {

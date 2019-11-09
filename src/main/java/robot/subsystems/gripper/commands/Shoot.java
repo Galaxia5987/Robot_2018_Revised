@@ -4,7 +4,7 @@ import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.InstantCommand;
 import robot.Robot;
 
-import static robot.Constants.Gripper.MIN_SHOOTING_HEIGHT;
+import static robot.Constants.Elevator.MIN_SHOOTING_HEIGHT;
 
 public class Shoot extends InstantCommand {
     private Timer timer = new Timer();

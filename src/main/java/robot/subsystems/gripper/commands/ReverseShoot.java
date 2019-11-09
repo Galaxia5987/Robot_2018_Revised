@@ -4,7 +4,6 @@ import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.InstantCommand;
 import robot.Robot;
 
-import static robot.Constants.Gripper.MIN_REVERSE_SHOOT_HEIGHT;
 
 public class ReverseShoot extends InstantCommand {
 
