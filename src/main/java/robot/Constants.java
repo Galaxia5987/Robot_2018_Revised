@@ -22,8 +22,8 @@ public class Constants {
         public static double KI = 0.0;
         public static double KD = 0.12;
         public static final int TALON_PID_SLOT = 0;
-        public static final double FEED_FORWARD = 0.32;
-        public static final double MAX_HEIGHT = 2 ;
+        public static final double FEED_FORWARD = 0.4;
+        public static final double MAX_HEIGHT = 1.5 ;
         public static final double MIN_HEIGHT = -0.01;
         public static final double DROP_HEIGHT = 0.05;
         public static final double HEIGHT_THRESHOLD = 0.000;
